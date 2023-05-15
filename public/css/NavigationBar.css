@@ -1,0 +1,223 @@
+@font-face {
+    font-family: 'AvantGarde Bk BT';
+    src: url(fonts/AVGARDN_2.TTF);
+}
+
+@font-face {
+    font-family: 'Product Sans';
+    src: url(fonts/Product\ Sans\ Regular.ttf);
+}
+/*-------------------------------- Navigation Bar --------------------------------*/
+nav {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 24px 120px;
+    gap: 78px;
+
+    position: fixed;
+    width: 1440px;
+    height: 64px;
+    left: 0px;
+    top: 0px;
+
+    z-index: 9999;
+
+    /* Background and Button Text */
+
+    background: #FFFFFF;
+    /* Shadow Content */
+
+    box-shadow: 0px 0px 10px rgba(23, 9, 14, 0.2);
+}
+
+#logo {
+    width: 161px;
+    height: 43px;
+
+    font-family: 'AvantGarde Bk BT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 43px;
+    margin: 10.5px 0px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+#logo::before {
+    content: "Book";
+    color: #094067;
+}
+
+#logo::after {
+    content: "Mate";
+    color: #3DA9FC;
+}
+
+.kaca-pembesar {
+    width: 24px;
+    height: 24px;
+}
+
+.search-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 24px;
+    gap: 24px;
+
+    width: 600px;
+    height: 44px;
+
+    /* Neutral/Neutral-100 */
+
+    background: #f4f4f4;
+    border-radius: 10px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.search-field {
+    width: 552px;
+    height: 64px;
+    border: none;
+    outline: none;
+}
+
+nav form input::placeholder {
+    width: 161px;
+    height: 24px;
+
+    /* Body/Body Large */
+
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    letter-spacing: 0.5px;
+
+    /* Paragraph */
+
+    color: #5F6C7B;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+nav form input {
+    background-color: transparent;
+}
+
+nav form input[type="search"] {
+    width: 552px;
+    height: 24px;
+
+    /* Body/Body Large */
+
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    letter-spacing: 0.5px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+}
+
+nav ul {
+    /* Auto layout */
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 0px;
+    gap: 43px;
+    width: 300px;
+    height: 28px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+
+li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav a {
+    width: 73px;
+    height: 28px;
+
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    /* identical to box height, or 140% */
+
+
+    /* Button */
+
+    color: #5F6C7B;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+nav a.active {
+    width: 73px;
+    height: 28px;
+
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    text-decoration: none;
+    /* identical to box height, or 140% */
+
+
+    /* Button */
+
+    color: #3DA9FC;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}

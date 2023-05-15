@@ -1,0 +1,152 @@
+@font-face {
+    font-family: 'AvantGarde Bk BT';
+    src: url(../fonts/AVGARDN_2.TTF);
+}
+
+@font-face {
+    font-family: 'Product Sans';
+    src: url(../fonts/ProductSansRegular.ttf);
+}
+
+body {
+    /* display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+
+    position: relative;
+    width: 100%;
+    height: 3042px;
+    overflow-y: scroll;
+
+    background: #FFFFFF; */
+}
+
+#hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 203px 0px 267px;
+
+    position: absolute;
+    height: 380px;
+    left: 0px;
+    top: 110px;
+
+    background-color: #FFFFFF;
+}
+
+#hero h1 {
+    width: 718px;
+    height: 96px;
+
+    /* Headline/Headline Small */
+
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    /* or 133% */
+
+    text-align: center;
+
+    /* Headline */
+
+    color: #094067;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.hero-main {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    padding: 0px 120px;
+    gap: 130px;
+
+    width: 1440px;
+    height: 394px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.hero-image {
+    width: 400px;
+    height: 394px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.rekomendasi {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px 0px 48px;
+    
+    position: absolute;
+    width: 1440px;
+    height: 1614px;
+    left: 0px;
+    top: 962px;
+    
+    /* Background and Button Text */
+    
+    background: #000;
+}
+
+.rekomendasi ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 48px 24px;
+    gap: 808px;
+
+    position: absolute;
+    width: 1248px;
+    height: 36px;
+    left: 96px;
+    top: 0px;
+}
+
+.rekomendasi ul li h1 { 
+    width: 310px;
+    height: 36px;
+
+    /* Headline/Headline Medium */
+
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 36px;
+    /* identical to box height, or 129% */
+
+
+    /* Headline */
+
+    color: #094067;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
