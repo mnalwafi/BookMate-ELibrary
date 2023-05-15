@@ -36,3 +36,16 @@ Route::get('/disimpan', function () {
         "tittle" => "Disimpan"
     ]);
 });
+
+
+Route::get('/login', function () {
+    return view('login', [
+        "tittle" => "Login"
+    ]);
+});
+
+Route::get('/signup', function () {
+    return view('signup', [
+        "tittle" => "Signup"
+    ]);
+});

@@ -1,7 +1,6 @@
  @extends('template.doctype')
 
  @section('content')
-
     @include('assets/navbar')
     <header id="hero">
         <div class="hero-main">

@@ -8,8 +8,8 @@
     src: url(../fonts/ProductSansRegular.ttf);
 }
 
-body {
-    /* display: flex;
+/* body {
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 0px;
@@ -19,8 +19,8 @@ body {
     height: 3042px;
     overflow-y: scroll;
 
-    background: #FFFFFF; */
-}
+    background: #FFFFFF;
+} */
 
 #hero {
     display: flex;
@@ -97,15 +97,15 @@ body {
     flex-direction: column;
     align-items: flex-start;
     padding: 0px 0px 48px;
-    
+
     position: absolute;
     width: 1440px;
     height: 1614px;
     left: 0px;
     top: 962px;
-    
+
     /* Background and Button Text */
-    
+
     background: #000;
 }
 
@@ -124,7 +124,7 @@ body {
     top: 0px;
 }
 
-.rekomendasi ul li h1 { 
+.rekomendasi ul li h1 {
     width: 310px;
     height: 36px;
 
