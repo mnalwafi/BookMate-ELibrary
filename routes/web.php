@@ -14,5 +14,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('beranda');
+    return view('beranda', [
+        "tittle" => "Beranda"
+    ]);
+});
+
+Route::get('/login', function () {
+    return view('login', [
+        "tittle" => "Login"
+    ]);
+});
+
+Route::get('/profile', function () {
+    return view('profile', [
+        "tittle" => "Profile"
+    ]);
+});
+
+Route::get('/disimpan', function () {
+    return view('disimpan', [
+        "tittle" => "Disimpan"
+    ]);
 });

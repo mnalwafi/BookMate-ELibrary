@@ -1,31 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beranda</title>
+ @extends('template.doctype')
 
-    <link rel="stylesheet" href="css/NavigationBar.css">
-    <link rel="stylesheet" href="css/Beranda.css">
-    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/product-sans">
-    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/avantgarde-bk-bt-2">
+ @section('content')
 
-</head>
-<body>
-    <nav>
-        <div id="logo"></div>
-        <!-- Search Bar -->
-        <form action="" method="GET" class="search-bar">
-            <img src="img/Kaca Pembesar.png" alt="Kaca Pembesar" class="kaca-pembesar">
-            <input type="search" placeholder='Ketik "Novel Penyihir"' class="search-field"/>
-        </form>
-        <ul>
-            <li><a href="#Beranda" class="active">Beranda</a></li>
-            <li><a href="#Disimpan">Disimpan</a></li>
-            <li><a href="#Profile">Profile</a></li>
-        </ul>
-    </nav>
+    @include('assets/navbar')
     <header id="hero">
         <div class="hero-main">
             <img src="img/Vector Baca Buku1.png" alt="Vector Baca Buku" class="hero-image">
@@ -41,6 +18,4 @@
             </ul>
         </section>
     </main>
-
-</body>
-</html>
+@endsection
