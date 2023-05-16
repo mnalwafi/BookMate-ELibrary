@@ -2,7 +2,7 @@
     <div id="logo"></div>
     <!-- Search Bar -->
     <form action="" method="GET" class="search-bar">
-        <img src="img/Kaca Pembesar.png" alt="Kaca Pembesar" class="kaca-pembesar">
+        <img src="img/icon/Kaca Pembesar.png" alt="Kaca Pembesar" class="kaca-pembesar">
         <input type="search" placeholder='Ketik "Novel Penyihir"' class="search-field"/>
     </form>
     <ul>

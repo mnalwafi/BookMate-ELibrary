@@ -1,5 +1,9 @@
  @extends('template.doctype')
 
+ @section('link')
+    <link rel="stylesheet" href="css/Beranda.css">
+ @endsection
+
  @section('content')
     @include('assets/navbar')
     <header id="hero">
