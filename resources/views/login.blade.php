@@ -17,32 +17,41 @@
             </section>
             <div class="login">
                 <form action="" class="input-manual">
-                    <div class="email">
-                        <h1>Email</h1>
-                        <div class="box">
-                            <label for="email">
-                                <img src="img/icon/mail.png" alt="">
-                            </label>
-                            <input type="email" name="email" id="email" placeholder="Email">
+                    <div class="input-data">
+                        <div class="email">
+                            <h1>Email</h1>
+                            <div class="box">
+                                <label for="email">
+                                    <img src="img/icon/mail.png" alt="">
+                                </label>
+                                <input type="email" name="email" id="email" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="password">
+                            <h1>Password</h1>
+                            <div class="box">
+                                <label for="password">
+                                    <img src="img/icon/mail.png" alt="">
+                                </label>
+                                <input type="password" name="password" id="password" placeholder="Password">
+                                <div href="" id="mata" onclick="ubah()">
+                                    <img src="img/icon/eye-off.png" alt="mata-tutup">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bantuan">
+                            <div class="ingat">
+                                <input type="checkbox" name="ingat" id="ingat">
+                                <label for="ingat">Ingat saya</label>
+                            </div>
+                            <a href="">Lupa password?</a>
                         </div>
                     </div>
-                    <div class="password">
-                        <h1>Password</h1>
-                        <div class="box">
-                            <label for="password">
-                                <img src="img/icon/mail.png" alt="">
-                            </label>
-                            <input type="password" name="password" id="password" placeholder="Password">
-                            <span href="" id="mata" onclick="ubah()">
-                                <img src="img/icon/eye-off.png" alt="mata-tutup">
-                            </span>
-                        </div>
+                    <div class="submit">
+                        <button class="button-logsign">Log in</button>
+                        <a href="">Buat akun</a>
                     </div>
-                    <div class="button">
-                        <input type="submit" value="Login">
-                    </div>
-                    <div class="sign-up">Tidak memiliki akun?<a href="">Buat akun</a>
-                    </div>
+
                 </form>
             </div>
         </main>
