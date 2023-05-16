@@ -38,9 +38,11 @@
                             </span>
                         </div>
                     </div>
-                    <section class="lp">
-                        hai
-                    </section>
+                    <div class="button">
+                        <input type="submit" value="Login">
+                    </div>
+                    <div class="sign-up">Tidak memiliki akun?<a href="">Buat akun</a>
+                    </div>
                 </form>
             </div>
         </main>
