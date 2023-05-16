@@ -51,8 +51,27 @@
                         <button class="button-logsign">Log in</button>
                         <a href="">Buat akun</a>
                     </div>
-
                 </form>
+                <div class="atau">
+                    <svg width="192" height="2" viewBox="0 0 192 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.5 1H192" stroke="#C1C1C1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <h3>atau masuk menggunakan</h3>
+                    <svg width="192" height="2" viewBox="0 0 192 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.5 1H192" stroke="#C1C1C1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="login-integrate">
+                    <figure>
+                        <img src="img/logo/facebook.svg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="img/logo/google.svg" alt="">
+                    </figure>
+                    <figure>
+                        <img src="img/logo/linkedin.svg" alt="">
+                    </figure>
+                </div>
             </div>
         </main>
     </div>
