@@ -8,18 +8,20 @@
 .page {
     display: flex;
     flex-direction: row;
+    height: 970px;
+    overflow: hidden;
     align-items: flex-start;
     padding: 0px;
 }
 
 .foto-perpustakaan {
-    height: 100%;
+    height: 970px;
     width: 50%;
 }
 
 .foto-perpustakaan img {
     width: 100%;
-    height: 1000px;
+    height: 970px;
     /* Inside auto layout */
 
     flex: none;

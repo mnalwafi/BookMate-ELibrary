@@ -49,7 +49,7 @@
                     </div>
                     <div class="submit">
                         <button class="button-logsign">Log in</button>
-                        <a href="">Buat akun</a>
+                        <a href="/signup">Buat akun</a>
                     </div>
                 </form>
                 <div class="atau">
