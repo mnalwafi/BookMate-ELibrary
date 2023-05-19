@@ -5,7 +5,6 @@
 @endsection
 
 @section('content')
-
     <div class="page">
         <figure class="foto-perpustakaan">
             <img src="img/Perpustakaan.png" alt="perpustakaan">
@@ -53,12 +52,16 @@
                     </div>
                 </form>
                 <div class="atau">
-                    <svg width="192" height="2" viewBox="0 0 192 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1.5 1H192" stroke="#C1C1C1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <svg width="192" height="2" viewBox="0 0 192 2" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.5 1H192" stroke="#C1C1C1" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
                     </svg>
                     <h3>atau masuk menggunakan</h3>
-                    <svg width="192" height="2" viewBox="0 0 192 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1.5 1H192" stroke="#C1C1C1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <svg width="192" height="2" viewBox="0 0 192 2" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.5 1H192" stroke="#C1C1C1" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
                     </svg>
                 </div>
                 <div class="login-integrate">
@@ -80,7 +83,7 @@
         // membuat fungsi change
         function ubah() {
 
-    // membuat variabel berisi tipe input dari id='pass', id='pass' adalah form input password
+            // membuat variabel berisi tipe input dari id='pass', id='pass' adalah form input password
             var x = document.getElementById('password').type;
 
             //membuat if kondisi, jika tipe x adalah password maka jalankan perintah di bawahnya
@@ -91,8 +94,7 @@
 
                 //ubah icon mata terbuka menjadi tertutup
                 document.getElementById('mata').innerHTML = `<img src="img/icon/eye-on.png" alt="mata-buka">`;
-            }
-            else {
+            } else {
 
                 //ubah form input password menjadi text
                 document.getElementById('password').type = 'password';
