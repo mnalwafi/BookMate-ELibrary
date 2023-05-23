@@ -20,7 +20,9 @@
                  <li>
                      <h1>Rekomendasi untuk kamu</h1>
                  </li>
-                 <li><a href="#Lihatsemua">Lihat semua</a></li>
+                 <li>
+                    <a href="#Lihatsemua">Lihat semua</a>
+                </li>
              </ul>
          </section>
      </main>

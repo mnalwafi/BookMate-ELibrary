@@ -11,6 +11,7 @@
 nav {
     display: grid;
     grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
     padding: 24px 120px;
     gap: 78px;
 
@@ -153,7 +154,6 @@ nav ul {
     padding: 0px;
     gap: 43px;
     width: 300px;
-    height: 28px;
 
 
     /* Inside auto layout */
@@ -175,7 +175,7 @@ a {
 
 nav a {
     width: 73px;
-    height: 28px;
+    height: 64px;
 
     font-family: 'Product Sans';
     font-style: normal;

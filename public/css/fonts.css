@@ -3,6 +3,11 @@
  */
 /* cyrillic */
 @font-face {
+    font-family: 'AvantGarde Bk BT';
+    src: url(../fonts/AVGARDN_2.TTF);
+}
+
+@font-face {
   font-family: 'Product Sans';
   font-style: italic;
   font-weight: 100;
