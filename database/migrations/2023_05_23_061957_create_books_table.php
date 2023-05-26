@@ -24,6 +24,7 @@ return new class extends Migration
             $table->longText('Deskripsi');
             $table->date('TanggalTerbit');
             $table->string('Cover');
+            $table->string('slug');
             $table->timestamps();
         });
     }

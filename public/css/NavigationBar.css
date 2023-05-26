@@ -154,6 +154,7 @@ nav ul {
     padding: 0px;
     gap: 43px;
     width: 300px;
+    margin-block: 16px;
 
 
     /* Inside auto layout */

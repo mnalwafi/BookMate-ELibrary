@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BookController;
+use App\Models\Book;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,39 +15,37 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('beranda', [
-        "tittle" => "Beranda"
-    ]);
-});
+Route::get('/', [BookController::class, 'index']);
 
 Route::get('/login', function () {
     return view('login', [
-        "tittle" => "Login"
+        "title" => "Login"
     ]);
 });
 
 Route::get('/profile', function () {
     return view('profile', [
-        "tittle" => "Profile"
+        "title" => "Profile"
     ]);
 });
 
 Route::get('/disimpan', function () {
     return view('disimpan', [
-        "tittle" => "Disimpan"
+        "title" => "Disimpan"
     ]);
 });
 
 
 Route::get('/login', function () {
     return view('login', [
-        "tittle" => "Login"
+        "title" => "Login"
     ]);
 });
 
 Route::get('/signup', function () {
     return view('signup', [
-        "tittle" => "Sign up"
+        "title" => "Sign up"
     ]);
 });
+
+Route::get('/buku/{book:slug}', [BookController::class, 'show']);

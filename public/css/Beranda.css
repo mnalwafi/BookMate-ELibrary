@@ -12,13 +12,12 @@
     background: #FFFFFF;
 } */
 
-main {
-    margin: 0;
+
+* {
     margin-block: 0;
     margin-inline: 0;
-    padding: 0;
-    padding-inline: 0;
 }
+
 
 #hero {
     display: flex;
@@ -26,10 +25,12 @@ main {
     align-items: center;
     padding: 203px 0px 267px;
 
+    overflow-y: hidden;
+
     position: absolute;
     height: 380px;
     left: 0px;
-    top: 110px;
+    top: 112px;
 
     background-color: #FFFFFF;
 }
@@ -97,24 +98,23 @@ main {
     padding: 0px 0px 48px;
 
     position: absolute;
-    width: 1440px;
+    width: 100%;
     height: 1614px;
     left: 0px;
-    top: 1024px;
+    top: 850px;
 
     /* Background and Button Text */
 
     background: #FFFFFF;
 }
 
-.rekomendasi {
+section {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0px;
 
-    width: 1680px;
-    height: 522px;
+    width: 100%;
 
 
     /* Inside auto layout */
@@ -124,14 +124,15 @@ main {
     flex-grow: 0;
 }
 
-.rekomendasi ul {
+section ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 48px 24px;
+    gap: 808px;
 
-    width: 1440px;
+    width: 1248px;
     height: 132px;
 
 
@@ -142,7 +143,7 @@ main {
     flex-grow: 0;
 }
 
-.rekomendasi ul li h1 {
+section ul li h1 {
     width: 310px;
     height: 36px;
 
@@ -168,3 +169,206 @@ main {
     flex-grow: 0;
 }
 
+section ul li a {
+    width: 89px;
+    height: 24px;
+
+    /* Body/Body Large */
+
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    letter-spacing: 0.5px;
+
+    /* Button */
+
+    color: #3DA9FC;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.konten {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 0px 0px 96px;
+    gap: 10px;
+
+    width: 1440px;
+    height: 520px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.konten .kolom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 24px;
+    gap: 48px;
+
+    width: 1420px;
+    height: 520px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.konten .kolom .cover {
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px 24px 24px;
+    gap: 16px;
+
+    width: 236px;
+    height: 473px;
+
+    background: #FFFFFF;
+    border: 1px solid #5F6C7B;
+    border-radius: 8px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.konten .kolom a img {
+    width: 188px;
+    height: 283px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    z-index: 0;
+}
+
+.konten .kolom a h3 {
+    width: 188px;
+    height: 20px;
+
+    /* Body/Body Medium */
+
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+    letter-spacing: 0.25px;
+
+    /* Paragraph */
+
+    color: #5F6C7B;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+    z-index: 1;
+}
+
+.konten .kolom a h1 {
+    width: 188px;
+
+    /* Body/Body Large */
+
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+
+    letter-spacing: 0.5px;
+
+    /* Headline */
+
+    color: #094067;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 2;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.konten .kolom a .rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+
+    width: 188px;
+    height: 26px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 3;
+    align-self: stretch;
+    flex-grow: 0;
+    z-index: 3;
+}
+
+.konten .kolom a button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 48px;
+    gap: 11px;
+
+    position: absolute;
+    width: 188px;
+    height: 48px;
+    left: 24px;
+    top: 448px;
+
+    /* Button */
+
+    background: #3DA9FC;
+    border-radius: 8px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 4;
+    flex-grow: 0;
+    z-index: 4;
+}

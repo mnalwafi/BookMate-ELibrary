@@ -15,15 +15,77 @@
          </div>
      </header>
      <main>
-         <section class="rekomendasi">
+         <section>
              <ul>
                  <li>
                      <h1>Rekomendasi untuk kamu</h1>
                  </li>
                  <li>
-                    <a href="#Lihatsemua">Lihat semua</a>
+                    <a href="/">Lihat semua</a>
                 </li>
-             </ul>
+            </ul>
+            <div class="konten">
+                <div class="kolom">
+                    @foreach ($bookdata as $book)
+                    <a href="/buku/{{$book->slug}}" class="cover">
+                        <img src="/img/Cover Buku.png" alt="">
+                        <h3>{{$book->Penulis}}</h3>
+                        <h1>{{$book->Judul}}</h1>
+                        <div class="rating">
+                            rating
+                        </div>
+                    </a>
+                    @endforeach
+                </div>
+            </div>
          </section>
+         <section>
+            <ul>
+                <li>
+                    <h1>Sedang Populer</h1>
+                </li>
+                <li>
+                   <a href="/">Lihat semua</a>
+               </li>
+           </ul>
+           <div class="konten">
+               <div class="kolom">
+                   @foreach ($bookdata as $book)
+                   <a href="/buku/{{$book->slug}}" class="cover">
+                       <img src="/img/Cover Buku.png" alt="">
+                       <h3>{{$book->Penulis}}</h3>
+                       <h1>{{$book->Judul}}</h1>
+                       <div class="rating">
+                           rating
+                       </div>
+                   </a>
+                   @endforeach
+               </div>
+           </div>
+        </section>
+        <section>
+            <ul>
+                <li>
+                    <h1>Buku Terbaru</h1>
+                </li>
+                <li>
+                   <a href="/">Lihat semua</a>
+               </li>
+           </ul>
+           <div class="konten">
+               <div class="kolom">
+                   @foreach ($bookdata as $book)
+                   <a href="/buku/{{$book->slug}}" class="cover">
+                       <img src="/img/Cover Buku.png" alt="">
+                       <h3>{{$book->Penulis}}</h3>
+                       <h1>{{$book->Judul}}</h1>
+                       <div class="rating">
+                           rating
+                       </div>
+                   </a>
+                   @endforeach
+               </div>
+           </div>
+        </section>
      </main>
  @endsection
