@@ -30,7 +30,7 @@
                             <h1>Password</h1>
                             <div class="box">
                                 <label for="password">
-                                    <img src="img/icon/mail.png" alt="">
+                                    <img src="img/icon/lock.png" alt="">
                                 </label>
                                 <input type="password" name="password" id="password" placeholder="Password">
                                 <div href="" id="mata" onclick="ubah()">
