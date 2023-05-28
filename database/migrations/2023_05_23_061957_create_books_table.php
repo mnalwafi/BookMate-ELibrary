@@ -13,17 +13,20 @@ return new class extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
+            $table->foreignId('reviewrating_id');
             $table->bigInteger('ISBN') -> Unique();
-            $table->string('Bahasa');
-            $table->text('Judul');
-            $table->string('Penulis');
-            $table->string('Penerbit');
-            $table->integer('Berat');
-            $table->integer('Lebar');
-            $table->integer('Panjang');
-            $table->longText('Deskripsi');
-            $table->date('TanggalTerbit');
-            $table->string('Cover');
+            $table->string('bahasa');
+            $table->text('judul');
+            $table->string('penulis');
+            $table->string('penerbit');
+            $table->integer('berat');
+            $table->integer('lebar');
+            $table->integer('panjang');
+            $table->longText('deskripsi');
+            $table->date('tanggalterbit');
+            $table->integer('kuantitas');
+            $table->string('cover');
             $table->string('slug');
             $table->timestamps();
         });

@@ -204,7 +204,7 @@ section ul li a {
     gap: 10px;
 
     width: 1440px;
-    height: 520px;
+    height: 471px;
 
 
     /* Inside auto layout */
@@ -222,7 +222,7 @@ section ul li a {
     gap: 48px;
 
     width: 1420px;
-    height: 520px;
+    height: 471px;
 
 
     /* Inside auto layout */
@@ -247,7 +247,7 @@ section ul li a {
     height: 473px;
 
     background: #FFFFFF;
-    border: 1px solid #5F6C7B;
+    border: 1px solid #f4f4f4;
     border-radius: 8px;
 
     /* Inside auto layout */
@@ -334,7 +334,7 @@ section ul li a {
     gap: 10px;
 
     width: 188px;
-    height: 26px;
+    height: 24px;
 
 
     /* Inside auto layout */
@@ -343,32 +343,105 @@ section ul li a {
     order: 3;
     align-self: stretch;
     flex-grow: 0;
-    z-index: 3;
 }
 
-.konten .kolom a button {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 16px 48px;
-    gap: 11px;
+.konten .kolom a .rating h3 {
+    width: 39px;
+    height: 24px;
 
-    position: absolute;
-    width: 188px;
-    height: 48px;
-    left: 24px;
-    top: 448px;
+    /* Body/Body Large */
 
-    /* Button */
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
 
-    background: #3DA9FC;
-    border-radius: 8px;
+    text-align: right;
+    letter-spacing: 0.5px;
+
+    /* Paragraph */
+
+    color: #5F6C7B;
+
 
     /* Inside auto layout */
 
     flex: none;
-    order: 4;
+    order: 1;
     flex-grow: 0;
-    z-index: 4;
+}
+
+.konten .kolom a .scores {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 4px;
+
+    width: 126px;
+    height: 24px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.konten .kolom a .scores h3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+
+    width: 24px;
+    height: 24px;
+
+    /* Body/Body Large */
+
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    letter-spacing: 0.5px;
+
+    color: #E0B442;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.konten .kolom a .scores .stars {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 2px;
+
+    width: 98px;
+    height: 24px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
 }
