@@ -14,20 +14,20 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('users')->insert([
-            'email' => 'admin@admin.com',
-            'password' => Hash::make('admin123'),
-            'level' => 'admin'
-        ]);
-        DB::table('users')->insert([
-            'email' => 'user1@user.com',
-            'password' => Hash::make('userSatu'),
-            'level' => 'user'
-        ]);
-        DB::table('users')->insert([
-            'email' => 'user2@user.com',
-            'password' => Hash::make('userDua'),
-            'level' => 'user'
-        ]);
+        // DB::table('users')->insert([
+        //     'email' => 'admin@admin.com',
+        //     'password' => Hash::make('admin123'),
+        //     'level' => 'admin'
+        // ]);
+        // DB::table('users')->insert([
+        //     'email' => 'user1@user.com',
+        //     'password' => Hash::make('userSatu'),
+        //     'level' => 'user'
+        // ]);
+        // DB::table('users')->insert([
+        //     'email' => 'user2@user.com',
+        //     'password' => Hash::make('userDua'),
+        //     'level' => 'user'
+        // ]);
     }
 }

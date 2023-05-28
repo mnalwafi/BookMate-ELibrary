@@ -15,15 +15,15 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->foreignId('reviewrating_id');
-            $table->bigInteger('ISBN') -> Unique();
+            $table->string('ISBN');
             $table->string('bahasa');
-            $table->text('judul');
+            $table->string('judul');
             $table->string('penulis');
             $table->string('penerbit');
             $table->integer('berat');
             $table->integer('lebar');
             $table->integer('panjang');
-            $table->longText('deskripsi');
+            $table->text('deskripsi');
             $table->date('tanggalterbit');
             $table->integer('kuantitas');
             $table->string('cover');

@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use Faker\Factory as Faker;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,8 +18,16 @@ class ReviewratingFactory extends Factory
      */
     public function definition(): array
     {
+        $faker = Faker::create();
+
+        $user_id = DB::table('users')->pluck('id');
+        $book_id = DB::table('books')->pluck('id');
         return [
-            //
+            'user_id' => $faker->randomElement($user_id),
+            'book_id' => $faker->randomElement($book_id),
+            'rating' => $faker->numberBetween(3,5),
+            'review' => $faker->paragraph(),
+            'jumlah' => $faker->randomNumber(3, false),
         ];
     }
 }
