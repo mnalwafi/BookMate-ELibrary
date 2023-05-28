@@ -17,6 +17,7 @@ return new class extends Migration
             $table-> string('username')->unique();
             $table->string('email')->unique();
             $table->string('password');
+            $table->integer('nomortelp')->unique();
             $table->enum('level', ['user', 'admin']);
         });
     }
