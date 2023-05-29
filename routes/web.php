@@ -3,6 +3,8 @@
 use App\Models\Book;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SignupController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -18,12 +20,6 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', [BookController::class, 'index']);
 
-Route::get('/login', function () {
-    return view('login', [
-        "title" => "Login"
-    ]);
-});
-
 Route::get('/profile', [UserController::class, 'index']);
 
 Route::get('/disimpan', function () {
@@ -32,17 +28,10 @@ Route::get('/disimpan', function () {
     ]);
 });
 
+Route::get('/login', [LoginController::class, 'index']);
 
-Route::get('/login', function () {
-    return view('login', [
-        "title" => "Login"
-    ]);
-});
+Route::get('/signup', [SignupController::class, 'create']);
 
-Route::get('/signup', function () {
-    return view('signup', [
-        "title" => "Sign up"
-    ]);
-});
+Route::post('/signup', [SignupController::class, 'store']);
 
-Route::get('/{slug}', [BookController::class, 'show']);
+Route::get('/buku/{slug}', [BookController::class, 'show']);

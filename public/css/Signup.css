@@ -8,20 +8,19 @@
 .page {
     display: flex;
     flex-direction: row;
-    height: 1100px;
     overflow: hidden;
     align-items: flex-start;
     padding: 0px;
 }
 
 .foto-perpustakaan {
-    height: 1100px;
+    height: 970px;
     width: 50%;
 }
 
 .foto-perpustakaan img {
     width: 100%;
-    height: 1100px;
+    height: 970px;
     /* Inside auto layout */
 
     flex: none;
@@ -57,7 +56,6 @@ main {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-top: 150px;
     gap: 16px;
 
     width: 600px;
@@ -167,7 +165,7 @@ h1 {
     padding: 16px 24px;
     gap: 16px;
 
-    width: 600px;
+    width: 100%;
     height: 56px;
 
     /* Background and Button Text */
@@ -190,6 +188,7 @@ h1 {
     border: none;
     outline: none;
     width: 100%;
+    height: 24px;
 }
 
 .box input[type="email"], .box input[type="text"], .box input[type="password"] {
@@ -236,45 +235,35 @@ h1 {
     flex-grow: 0;
 }
 
-.nama-depan .nama-belakang {
-    padding-top: 16px;
-    /* padding-bottom: 10px; */
-}
-
 .syarat-ketentuan{
     width: 600px;
     padding-top: 16px;
     padding-bottom: 16px;
     text-align: center;
 
-/* Title/Title Medium */
+    /* Title/Title Medium */
 
-font-family: 'Product Sans';
-font-style: normal;
-font-weight: 700;
-font-size: 16px;
-line-height: 24px;
-/* or 150% */
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
 
-letter-spacing: 0.15px;
+    letter-spacing: 0.15px;
 
-/* Paragraph */
+    /* Paragraph */
 
-color: #5F6C7B;
+    color: #5F6C7B;
 
 
-/* Inside auto layout */
+    /* Inside auto layout */
 
-flex: none;
-order: 1;
-align-self: stretch;
-flex-grow: 0;
-}
-
-.button input[type="submit"]:hover {
-    background: #094067;
-    cursor: pointer;
-}
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+    }
 
 .submit {
     display: flex;
@@ -293,7 +282,7 @@ flex-grow: 0;
     flex-grow: 0;
 }
 
-.button-logsign {
+.submit .button-logsign {
     font-family: 'Product Sans';
     font-style: normal;
     font-weight: 400;
@@ -316,12 +305,20 @@ flex-grow: 0;
     background: #3DA9FC;
     border-radius: 8px;
 
+    transition-duration: .3s;
+
     /* Inside auto layout */
 
     flex: none;
     order: 0;
     align-self: stretch;
     flex-grow: 0;
+}
+
+.submit .button-logsign:hover {
+    background: #2f92dd;
+    cursor: pointer;
+    transition-duration: .3s;
 }
 
 .submit a {
@@ -338,19 +335,19 @@ flex-grow: 0;
 
     color: #3DA9FC;
 
-    transform: translateX(64px);
+    transform: translateX(-3px);
 }
 
-.submit h3{
+.submit a::before {
+    content: 'Sudah memiliki akun? ';
     font-family: 'Product Sans';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-    /* identical to box height, or 150% */
+    /* identical to box height, or 143% */
 
-    text-align: center;
-    letter-spacing: 0.15px;
+    letter-spacing: 0.1px;
 
     /* Paragraph */
 
@@ -431,5 +428,98 @@ flex-grow: 0;
 
     flex: none;
     order: 2;
+    flex-grow: 0;
+}
+
+/* perbaikan -wafi */
+
+.nama {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+
+    grid-template-columns: auto auto;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.nama-depan, .nama-belakang {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+}
+
+.nama-depan .box, .nama-belakang .box {
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px 24px;
+    gap: 16px;
+
+    height: 52px;
+
+    /* Background and Button Text */
+
+    background: #FFFFFF;
+    /* Paragraph */
+
+    border: 1px solid #A2A2A6;
+    border-radius: 8px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.email, .no-telp, .password {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+}
+
+.welcoming div h1 {
+    height: 36px;
+
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 36px;
+    /* identical to box height, or 129% */
+
+
+    /* Headline */
+
+    color: #094067;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
     flex-grow: 0;
 }

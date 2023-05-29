@@ -12,7 +12,8 @@
         <main>
             <section class="welcoming">
                 <div>
-                    <h1>Hai, selamat datang di <img src="img/logo-bookmate-crop.png"> 👋</h1></div>
+                    <img src="img/Greetings.svg" alt="">
+                </div>
                 <p>Silahkan masuk untuk mulai membaca 😉</p>
             </section>
             <div class="signup">
@@ -20,16 +21,16 @@
                     <div class="input-data">
                         <div class="nama">
                             <div class="nama-depan">
-                                <h1>Nama Depan</h1>
+                                <h1>Nama Lengkap</h1>
                                 <div class="box">
-                                    <input type="text" placeholder="Nama depan Anda">
+                                    <input type="text" name="name" placeholder="Nama lengkap Anda">
                                 </div>
-                                <div class="nama-belakang">
-                                    <h1>Nama Belakang</h1>
-                                    <div class="box">
-                                        <input type="text" placeholder="Nama belakang Anda">
-                                    </div>
-
+                            </div>
+                            <div class="nama-belakang">
+                                <h1>Username
+                                </h1>
+                                <div class="box">
+                                    <input type="text" name="username" placeholder="Username Anda">
                                 </div>
                             </div>
                         </div>
@@ -46,11 +47,12 @@
                             <h1>Nomor Telepon</h1>
                             <div class="box">
                                 <label for="no-telp">
-                                    <svg width="16" height="22" viewBox="0 0 16 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M13 1H3C1.89543 1 1 1.89543 1 3V19C1 20.1046 1.89543 21 3 21H13C14.1046 21 15 20.1046 15 19V3C15 1.89543 14.1046 1 13 1Z" stroke="#5F6C7B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 2H7C5.89543 2 5 2.89543 5 4V20C5 21.1046 5.89543 22 7 22H17C18.1046 22 19 21.1046 19 20V4C19 2.89543 18.1046 2 17 2Z" stroke="#5F6C7B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M12 18H12.01" stroke="#5F6C7B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
                                 </label>
-                                <input type="text" placeholder="081234567890">
+                                <input type="text" name="notelp" placeholder="(+62) 888 - 8888 - 8888">
                             </div>
                         </div>
                         <div class="password">
@@ -70,10 +72,9 @@
                     </h3>Dengan signup, Anda menyetujui <a href="">Syarat & Ketentuan</a> dan <a href="">Kebijakan Privasi</a>
                     <h3>
                     </div>
-
                     <div class="submit">
                         <button class="button-logsign">Sign up</button>
-                        <h3>Sudah memiliki akun? <a href="/login">Log in</a></h3>
+                        <a href="/login">Log in</a>
                     </div>
                 </form>
                 <div class="atau">

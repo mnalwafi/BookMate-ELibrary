@@ -18,12 +18,12 @@
                 <form action="" class="input-manual">
                     <div class="input-data">
                         <div class="email">
-                            <h1>Email</h1>
+                            <h1>User Identifier</h1>
                             <div class="box">
-                                <label for="email">
+                                <label for="identifier">
                                     <img src="img/icon/mail.png" alt="">
                                 </label>
-                                <input type="email" name="email" id="email" placeholder="Email">
+                                <input type="text" name="identifier" id="identifier" placeholder="Phone, email address, or username">
                             </div>
                         </div>
                         <div class="password">

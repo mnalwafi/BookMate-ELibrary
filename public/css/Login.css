@@ -409,10 +409,6 @@ h1 {
     flex-grow: 0;
 }
 
-.button input[type="submit"]:hover {
-    background: #094067;
-    cursor: pointer;
-}
 
 .submit {
     display: flex;
@@ -455,12 +451,20 @@ h1 {
     background: #3DA9FC;
     border-radius: 8px;
 
+    transition-duration: .3s;
+
     /* Inside auto layout */
 
     flex: none;
     order: 0;
     align-self: stretch;
     flex-grow: 0;
+}
+
+.submit .button-logsign:hover {
+    background: #2f92dd;
+    cursor: pointer;
+    transition-duration: .3s;
 }
 
 .submit a {
@@ -477,7 +481,7 @@ h1 {
 
     color: #3DA9FC;
 
-    transform: translateX(64px);
+    transform: translateX(57px);
 }
 
 .submit a::before {
