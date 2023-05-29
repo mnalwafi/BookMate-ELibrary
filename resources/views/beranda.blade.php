@@ -26,19 +26,19 @@
             </ul>
             <div class="konten">
                 <div class="kolom">
-                    @if (count($bookdata) < 7)
-                        @foreach ($bookdata as $book)
-                        <a href="/{{$book->slug}}" class="cover">
-                            <img src="https://api.bookcover.longitood.com/bookcover" alt="">
-                            <h3>{{$book->penulis}}</h3>
-                            <h1>{{$book->judul}}</h1>
+                    @if (count($bookrecommend) < 7)
+                        @foreach ($bookrecommend as $book)
+                        <a href="/{{$book->book->slug}}" class="cover">
+                            <img src="https://covers.openlibrary.org/b/isbn/{{$book->book->ISBN}}-L.jpg" alt="">
+                            <h3>{{$book->book->penulis}}</h3>
+                            <h1>{{$book->book->judul}}</h1>
                             <div class="rating">
                                 <div class="scores">
                                     <h3>
-                                        {{$book->reviewrating->rating}}
+                                        {{$book->rating}}
                                     </h3>
                                     <div class="stars">
-                                        @for ($i = 0; $i < $book->reviewrating->rating; $i++)
+                                        @for ($i = 0; $i < $book->rating; $i++)
                                         <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <g clip-path="url(#clip0_455_1099)">
                                             <path d="M8.9998 15.5797L4.63727 18.3315C4.44455 18.4599 4.24306 18.5149 4.03282 18.4966C3.82258 18.4782 3.63862 18.4048 3.48093 18.2764C3.32325 18.148 3.20061 17.9877 3.11301 17.7954C3.02541 17.6024 3.00789 17.3867 3.06045 17.1482L4.21678 11.9474L0.353575 8.45261C0.178373 8.2875 0.0690469 8.09928 0.0255967 7.88795C-0.0185542 7.67734 -0.00558932 7.47115 0.0644915 7.26935C0.134572 7.06755 0.239694 6.90245 0.379855 6.77403C0.520017 6.64561 0.712739 6.56306 0.958022 6.52637L6.05641 6.05857L8.02743 1.16042C8.11503 0.940283 8.25099 0.775177 8.4353 0.665106C8.61891 0.555035 8.80708 0.5 8.9998 0.5C9.19252 0.5 9.38104 0.555035 9.56535 0.665106C9.74897 0.775177 9.88457 0.940283 9.97217 1.16042L11.9432 6.05857L17.0416 6.52637C17.2869 6.56306 17.4796 6.64561 17.6197 6.77403C17.7599 6.90245 17.865 7.06755 17.9351 7.26935C18.0052 7.47115 18.0185 7.67734 17.9751 7.88795C17.9309 8.09928 17.8212 8.2875 17.646 8.45261L13.7828 11.9474L14.9392 17.1482C14.9917 17.3867 14.9742 17.6024 14.8866 17.7954C14.799 17.9877 14.6764 18.148 14.5187 18.2764C14.361 18.4048 14.177 18.4782 13.9668 18.4966C13.7565 18.5149 13.5551 18.4599 13.3623 18.3315L8.9998 15.5797Z" fill="#F5C549"/>
@@ -53,24 +53,24 @@
                                     </div>
                                 </div>
                                 <h3>
-                                    ({{$book->reviewrating->jumlah}})
+                                    ({{$book->jumlah}})
                                 </h3>
                             </div>
                         </a>
                         @endforeach
                     @else
                         @for ($i=0; $i < 8; $i++)
-                        <a href="/{{$bookdata[$i]->slug}}" class="cover">
-                            <img src="https://covers.openlibrary.org/b/goodreads/979250-S.jpg" alt="">
-                            <h3>{{$bookdata[$i]->penulis}}</h3>
-                            <h1>{{$bookdata[$i]->judul}}</h1>
+                        <a href="/{{$bookrecommend[$i]->book->slug}}" class="cover">
+                            <img src="https://covers.openlibrary.org/b/isbn/{{$bookrecommend[$i]->book->ISBN}}-L.jpg" alt="">
+                            <h3>{{$bookrecommend[$i]->book->penulis}}</h3>
+                            <h1>{{$bookrecommend[$i]->book->judul}}</h1>
                             <div class="rating">
                                 <div class="scores">
                                     <h3>
-                                        {{$bookdata[$i]->reviewrating->rating}}
+                                        {{$bookrecommend[$i]->rating}}
                                     </h3>
                                     <div class="stars">
-                                        @for ($j = 0; $j < $bookdata[$i]->reviewrating->rating; $j++)
+                                        @for ($j = 0; $j < $bookrecommend[$i]->rating; $j++)
                                         <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <g clip-path="url(#clip0_455_1099)">
                                             <path d="M8.9998 15.5797L4.63727 18.3315C4.44455 18.4599 4.24306 18.5149 4.03282 18.4966C3.82258 18.4782 3.63862 18.4048 3.48093 18.2764C3.32325 18.148 3.20061 17.9877 3.11301 17.7954C3.02541 17.6024 3.00789 17.3867 3.06045 17.1482L4.21678 11.9474L0.353575 8.45261C0.178373 8.2875 0.0690469 8.09928 0.0255967 7.88795C-0.0185542 7.67734 -0.00558932 7.47115 0.0644915 7.26935C0.134572 7.06755 0.239694 6.90245 0.379855 6.77403C0.520017 6.64561 0.712739 6.56306 0.958022 6.52637L6.05641 6.05857L8.02743 1.16042C8.11503 0.940283 8.25099 0.775177 8.4353 0.665106C8.61891 0.555035 8.80708 0.5 8.9998 0.5C9.19252 0.5 9.38104 0.555035 9.56535 0.665106C9.74897 0.775177 9.88457 0.940283 9.97217 1.16042L11.9432 6.05857L17.0416 6.52637C17.2869 6.56306 17.4796 6.64561 17.6197 6.77403C17.7599 6.90245 17.865 7.06755 17.9351 7.26935C18.0052 7.47115 18.0185 7.67734 17.9751 7.88795C17.9309 8.09928 17.8212 8.2875 17.646 8.45261L13.7828 11.9474L14.9392 17.1482C14.9917 17.3867 14.9742 17.6024 14.8866 17.7954C14.799 17.9877 14.6764 18.148 14.5187 18.2764C14.361 18.4048 14.177 18.4782 13.9668 18.4966C13.7565 18.5149 13.5551 18.4599 13.3623 18.3315L8.9998 15.5797Z" fill="#F5C549"/>
@@ -85,7 +85,7 @@
                                     </div>
                                 </div>
                                 <h3>
-                                    ({{$bookdata[$i]->reviewrating->jumlah}})
+                                    ({{$bookrecommend[$i]->jumlah}})
                                 </h3>
                             </div>
                         </a>
@@ -105,19 +105,19 @@
            </ul>
            <div class="konten">
                <div class="kolom">
-                @if (count($bookdata) < 7)
-                    @foreach ($bookdata as $book)
+                @if (count($bookpopular) < 7)
+                    @foreach ($bookpopular as $book)
                     <a href="/{{$book->slug}}" class="cover">
-                        <img src="/img/Cover Buku.png" alt="">
-                        <h3>{{$book->penulis}}</h3>
-                        <h1>{{$book->judul}}</h1>
+                        <img src="https://covers.openlibrary.org/b/isbn/{{$book->book->ISBN}}-L.jpg" alt="">
+                        <h3>{{$book->book->penulis}}</h3>
+                        <h1>{{$book->book->judul}}</h1>
                         <div class="rating">
                             <div class="scores">
                                 <h3>
-                                    {{$book->reviewrating->rating}}
+                                    {{$book->rating}}
                                 </h3>
                                 <div class="stars">
-                                    @for ($i = 0; $i < $book->reviewrating->rating; $i++)
+                                    @for ($i = 0; $i < $book->rating; $i++)
                                     <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g clip-path="url(#clip0_455_1099)">
                                         <path d="M8.9998 15.5797L4.63727 18.3315C4.44455 18.4599 4.24306 18.5149 4.03282 18.4966C3.82258 18.4782 3.63862 18.4048 3.48093 18.2764C3.32325 18.148 3.20061 17.9877 3.11301 17.7954C3.02541 17.6024 3.00789 17.3867 3.06045 17.1482L4.21678 11.9474L0.353575 8.45261C0.178373 8.2875 0.0690469 8.09928 0.0255967 7.88795C-0.0185542 7.67734 -0.00558932 7.47115 0.0644915 7.26935C0.134572 7.06755 0.239694 6.90245 0.379855 6.77403C0.520017 6.64561 0.712739 6.56306 0.958022 6.52637L6.05641 6.05857L8.02743 1.16042C8.11503 0.940283 8.25099 0.775177 8.4353 0.665106C8.61891 0.555035 8.80708 0.5 8.9998 0.5C9.19252 0.5 9.38104 0.555035 9.56535 0.665106C9.74897 0.775177 9.88457 0.940283 9.97217 1.16042L11.9432 6.05857L17.0416 6.52637C17.2869 6.56306 17.4796 6.64561 17.6197 6.77403C17.7599 6.90245 17.865 7.06755 17.9351 7.26935C18.0052 7.47115 18.0185 7.67734 17.9751 7.88795C17.9309 8.09928 17.8212 8.2875 17.646 8.45261L13.7828 11.9474L14.9392 17.1482C14.9917 17.3867 14.9742 17.6024 14.8866 17.7954C14.799 17.9877 14.6764 18.148 14.5187 18.2764C14.361 18.4048 14.177 18.4782 13.9668 18.4966C13.7565 18.5149 13.5551 18.4599 13.3623 18.3315L8.9998 15.5797Z" fill="#F5C549"/>
@@ -132,24 +132,24 @@
                                 </div>
                             </div>
                             <h3>
-                                ({{$book->reviewrating->jumlah}})
+                                ({{$book->jumlah}})
                             </h3>
                         </div>
                     </a>
                     @endforeach
                 @else
                     @for ($i=0; $i < 8; $i++)
-                    <a href="/{{$bookdata[$i]->slug}}" class="cover">
-                        <img src="/img/Cover Buku.png" alt="">
-                        <h3>{{$bookdata[$i]->penulis}}</h3>
-                        <h1>{{$bookdata[$i]->judul}}</h1>
+                    <a href="/{{$bookpopular[$i]->book->slug}}" class="cover">
+                        <img src="https://covers.openlibrary.org/b/isbn/{{$bookpopular[$i]->book->ISBN}}-L.jpg" alt="">
+                        <h3>{{$bookpopular[$i]->book->penulis}}</h3>
+                        <h1>{{$bookpopular[$i]->book->judul}}</h1>
                         <div class="rating">
                             <div class="scores">
                                 <h3>
-                                    {{$bookdata[$i]->reviewrating->rating}}
+                                    {{$bookpopular[$i]->rating}}
                                 </h3>
                                 <div class="stars">
-                                    @for ($j = 0; $j < $bookdata[$i]->reviewrating->rating; $j++)
+                                    @for ($j = 0; $j < $bookpopular[$i]->rating; $j++)
                                     <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g clip-path="url(#clip0_455_1099)">
                                         <path d="M8.9998 15.5797L4.63727 18.3315C4.44455 18.4599 4.24306 18.5149 4.03282 18.4966C3.82258 18.4782 3.63862 18.4048 3.48093 18.2764C3.32325 18.148 3.20061 17.9877 3.11301 17.7954C3.02541 17.6024 3.00789 17.3867 3.06045 17.1482L4.21678 11.9474L0.353575 8.45261C0.178373 8.2875 0.0690469 8.09928 0.0255967 7.88795C-0.0185542 7.67734 -0.00558932 7.47115 0.0644915 7.26935C0.134572 7.06755 0.239694 6.90245 0.379855 6.77403C0.520017 6.64561 0.712739 6.56306 0.958022 6.52637L6.05641 6.05857L8.02743 1.16042C8.11503 0.940283 8.25099 0.775177 8.4353 0.665106C8.61891 0.555035 8.80708 0.5 8.9998 0.5C9.19252 0.5 9.38104 0.555035 9.56535 0.665106C9.74897 0.775177 9.88457 0.940283 9.97217 1.16042L11.9432 6.05857L17.0416 6.52637C17.2869 6.56306 17.4796 6.64561 17.6197 6.77403C17.7599 6.90245 17.865 7.06755 17.9351 7.26935C18.0052 7.47115 18.0185 7.67734 17.9751 7.88795C17.9309 8.09928 17.8212 8.2875 17.646 8.45261L13.7828 11.9474L14.9392 17.1482C14.9917 17.3867 14.9742 17.6024 14.8866 17.7954C14.799 17.9877 14.6764 18.148 14.5187 18.2764C14.361 18.4048 14.177 18.4782 13.9668 18.4966C13.7565 18.5149 13.5551 18.4599 13.3623 18.3315L8.9998 15.5797Z" fill="#F5C549"/>
@@ -164,7 +164,7 @@
                                 </div>
                             </div>
                             <h3>
-                                ({{$bookdata[$i]->reviewrating->jumlah}})
+                                ({{$bookpopular[$i]->jumlah}})
                             </h3>
                         </div>
                     </a>
@@ -184,10 +184,10 @@
            </ul>
            <div class="konten">
                <div class="kolom">
-                @if (count($bookdata) < 7)
-                    @foreach ($bookdata as $book)
+                @if (count($booklatest) < 7)
+                    @foreach ($booklatest as $book)
                     <a href="/{{$book->slug}}" class="cover">
-                        <img src="/img/Cover Buku.png" alt="">
+                        <img src="https://covers.openlibrary.org/b/isbn/{{$book->ISBN}}-L.jpg" alt="">
                         <h3>{{$book->penulis}}</h3>
                         <h1>{{$book->judul}}</h1>
                         <div class="rating">
@@ -218,17 +218,17 @@
                     @endforeach
                 @else
                     @for ($i=0; $i < 8; $i++)
-                    <a href="/{{$bookdata[$i]->slug}}" class="cover">
-                        <img src="/img/Cover Buku.png" alt="">
-                        <h3>{{$bookdata[$i]->penulis}}</h3>
-                        <h1>{{$bookdata[$i]->judul}}</h1>
+                    <a href="/{{$booklatest[$i]->slug}}" class="cover">
+                        <img src="https://covers.openlibrary.org/b/isbn/{{$booklatest[$i]->ISBN}}-L.jpg" alt="">
+                        <h3>{{$booklatest[$i]->penulis}}</h3>
+                        <h1>{{$booklatest[$i]->judul}}</h1>
                         <div class="rating">
                             <div class="scores">
                                 <h3>
-                                    {{$bookdata[$i]->reviewrating->rating}}
+                                    {{$booklatest[$i]->reviewrating->rating}}
                                 </h3>
                                 <div class="stars">
-                                    @for ($j = 0; $j < $bookdata[$i]->reviewrating->rating; $j++)
+                                    @for ($j = 0; $j < $booklatest[$i]->reviewrating->rating; $j++)
                                     <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g clip-path="url(#clip0_455_1099)">
                                         <path d="M8.9998 15.5797L4.63727 18.3315C4.44455 18.4599 4.24306 18.5149 4.03282 18.4966C3.82258 18.4782 3.63862 18.4048 3.48093 18.2764C3.32325 18.148 3.20061 17.9877 3.11301 17.7954C3.02541 17.6024 3.00789 17.3867 3.06045 17.1482L4.21678 11.9474L0.353575 8.45261C0.178373 8.2875 0.0690469 8.09928 0.0255967 7.88795C-0.0185542 7.67734 -0.00558932 7.47115 0.0644915 7.26935C0.134572 7.06755 0.239694 6.90245 0.379855 6.77403C0.520017 6.64561 0.712739 6.56306 0.958022 6.52637L6.05641 6.05857L8.02743 1.16042C8.11503 0.940283 8.25099 0.775177 8.4353 0.665106C8.61891 0.555035 8.80708 0.5 8.9998 0.5C9.19252 0.5 9.38104 0.555035 9.56535 0.665106C9.74897 0.775177 9.88457 0.940283 9.97217 1.16042L11.9432 6.05857L17.0416 6.52637C17.2869 6.56306 17.4796 6.64561 17.6197 6.77403C17.7599 6.90245 17.865 7.06755 17.9351 7.26935C18.0052 7.47115 18.0185 7.67734 17.9751 7.88795C17.9309 8.09928 17.8212 8.2875 17.646 8.45261L13.7828 11.9474L14.9392 17.1482C14.9917 17.3867 14.9742 17.6024 14.8866 17.7954C14.799 17.9877 14.6764 18.148 14.5187 18.2764C14.361 18.4048 14.177 18.4782 13.9668 18.4966C13.7565 18.5149 13.5551 18.4599 13.3623 18.3315L8.9998 15.5797Z" fill="#F5C549"/>
@@ -243,7 +243,7 @@
                                 </div>
                             </div>
                             <h3>
-                                ({{$bookdata[$i]->reviewrating->jumlah}})
+                                ({{$booklatest[$i]->reviewrating->jumlah}})
                             </h3>
                         </div>
                     </a>
