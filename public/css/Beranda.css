@@ -18,6 +18,10 @@
     margin-inline: 0;
 }
 
+*::-webkit-scrollbar {
+    display: none;
+}
+
 
 #hero {
     display: flex;
@@ -26,6 +30,7 @@
     padding: 203px 0px 267px;
 
     overflow-y: hidden;
+    overflow-x: hidden;
 
     position: absolute;
     height: 380px;
@@ -99,7 +104,6 @@ main {
 
     position: absolute;
     width: 100%;
-    height: 1614px;
     left: 0px;
     top: 850px;
 
@@ -113,6 +117,8 @@ section {
     flex-direction: column;
     align-items: center;
     padding: 0px;
+
+    transform: translateY(72px);
 
     width: 100%;
 
@@ -129,11 +135,11 @@ section ul {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 48px 24px;
+    padding: 48px 120px;
     gap: 808px;
 
-    width: 1248px;
-    height: 132px;
+    width: 1440px;
+    height: 36px;
 
 
     /* Inside auto layout */
@@ -200,12 +206,13 @@ section ul li a {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0px 0px 0px 96px;
+    padding: 0px 120px 0px 120px;
     gap: 10px;
 
     width: 1440px;
-    height: 471px;
-
+    height: 472px;
+    overflow-x: scroll;
+    overflow-y: hidden;
 
     /* Inside auto layout */
 
@@ -214,14 +221,16 @@ section ul li a {
     flex-grow: 0;
 }
 
+.konten::-webkit-scrollbar {
+    display: none;
+}
+
 .konten .kolom {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0px 24px;
     gap: 48px;
 
-    width: 1420px;
     height: 471px;
 
 
@@ -300,6 +309,7 @@ section ul li a {
 
 .konten .kolom a h1 {
     width: 188px;
+    height: 72px;
 
     /* Body/Body Large */
 
@@ -309,6 +319,11 @@ section ul li a {
     font-size: 16px;
     line-height: 24px;
     /* or 150% */
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 
     letter-spacing: 0.5px;
 
@@ -444,4 +459,8 @@ section ul li a {
     order: 1;
     align-self: stretch;
     flex-grow: 0;
+}
+
+.last-section {
+    margin-bottom: 120px;
 }

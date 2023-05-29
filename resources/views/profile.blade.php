@@ -3,6 +3,4 @@
 @section('content')
     @include('assets.navbar')
 
-
-
 @endsection

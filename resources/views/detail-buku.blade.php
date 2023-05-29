@@ -5,7 +5,16 @@
 @endsection
 
 @section('content')
-    @include('assets/navbar')
+    @include('assets.navbar')
 
-    <p>{{ $bookdata->Judul }}</p>
+    <div class="cover">
+        <div class="besar">
+            <img src="/img/Cover Buku 2.png" alt="Cover">
+        </div>
+        <div class="kecil">
+
+        </div>
+    </div>
+
+
 @endsection

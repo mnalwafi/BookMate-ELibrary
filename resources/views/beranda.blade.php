@@ -28,8 +28,8 @@
                 <div class="kolom">
                     @if (count($bookdata) < 7)
                         @foreach ($bookdata as $book)
-                        <a href="/buku/{{$book->slug}}" class="cover">
-                            <img src="/img/Cover Buku.png" alt="">
+                        <a href="/{{$book->slug}}" class="cover">
+                            <img src="https://api.bookcover.longitood.com/bookcover" alt="">
                             <h3>{{$book->penulis}}</h3>
                             <h1>{{$book->judul}}</h1>
                             <div class="rating">
@@ -60,8 +60,8 @@
                         @endforeach
                     @else
                         @for ($i=0; $i < 8; $i++)
-                        <a href="/buku/{{$bookdata[$i]->slug}}" class="cover">
-                            <img src="/img/Cover Buku.png" alt="">
+                        <a href="/{{$bookdata[$i]->slug}}" class="cover">
+                            <img src="https://covers.openlibrary.org/b/goodreads/979250-S.jpg" alt="">
                             <h3>{{$bookdata[$i]->penulis}}</h3>
                             <h1>{{$bookdata[$i]->judul}}</h1>
                             <div class="rating">
@@ -107,7 +107,7 @@
                <div class="kolom">
                 @if (count($bookdata) < 7)
                     @foreach ($bookdata as $book)
-                    <a href="/buku/{{$book->slug}}" class="cover">
+                    <a href="/{{$book->slug}}" class="cover">
                         <img src="/img/Cover Buku.png" alt="">
                         <h3>{{$book->penulis}}</h3>
                         <h1>{{$book->judul}}</h1>
@@ -139,7 +139,7 @@
                     @endforeach
                 @else
                     @for ($i=0; $i < 8; $i++)
-                    <a href="/buku/{{$bookdata[$i]->slug}}" class="cover">
+                    <a href="/{{$bookdata[$i]->slug}}" class="cover">
                         <img src="/img/Cover Buku.png" alt="">
                         <h3>{{$bookdata[$i]->penulis}}</h3>
                         <h1>{{$bookdata[$i]->judul}}</h1>
@@ -173,7 +173,7 @@
                </div>
            </div>
         </section>
-        <section>
+        <section class="last-section">
             <ul>
                 <li>
                     <h1>Buku Terbaru</h1>
@@ -186,7 +186,7 @@
                <div class="kolom">
                 @if (count($bookdata) < 7)
                     @foreach ($bookdata as $book)
-                    <a href="/buku/{{$book->slug}}" class="cover">
+                    <a href="/{{$book->slug}}" class="cover">
                         <img src="/img/Cover Buku.png" alt="">
                         <h3>{{$book->penulis}}</h3>
                         <h1>{{$book->judul}}</h1>
@@ -218,7 +218,7 @@
                     @endforeach
                 @else
                     @for ($i=0; $i < 8; $i++)
-                    <a href="/buku/{{$bookdata[$i]->slug}}" class="cover">
+                    <a href="/{{$bookdata[$i]->slug}}" class="cover">
                         <img src="/img/Cover Buku.png" alt="">
                         <h3>{{$bookdata[$i]->penulis}}</h3>
                         <h1>{{$bookdata[$i]->judul}}</h1>

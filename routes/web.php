@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\BookController;
 use App\Models\Book;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,11 +24,7 @@ Route::get('/login', function () {
     ]);
 });
 
-Route::get('/profile', function () {
-    return view('profile', [
-        "title" => "Profile"
-    ]);
-});
+Route::get('/profile', [UserController::class, 'index']);
 
 Route::get('/disimpan', function () {
     return view('disimpan', [
@@ -48,4 +45,4 @@ Route::get('/signup', function () {
     ]);
 });
 
-Route::get('/buku/{book:slug}', [BookController::class, 'show']);
+Route::get('/{slug}', [BookController::class, 'show']);

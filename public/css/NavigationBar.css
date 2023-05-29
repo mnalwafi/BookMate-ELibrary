@@ -23,10 +23,8 @@ nav {
 
     z-index: 9999;
 
-    /* Background and Button Text */
 
     background: #FFFFFF;
-    /* Shadow Content */
 
     box-shadow: 0px 0px 10px rgba(23, 9, 14, 0.2);
 }
@@ -41,8 +39,6 @@ nav {
     font-size: 36px;
     line-height: 43px;
     margin: 10.5px 0px;
-
-    /* Inside auto layout */
 
     flex: none;
     order: 0;

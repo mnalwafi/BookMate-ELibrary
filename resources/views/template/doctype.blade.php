@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/NavigationBar.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/avantgarde-bk-bt-2">
+
     @yield('link')
 
 </head>
