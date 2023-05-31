@@ -17,10 +17,10 @@ return new class extends Migration
             $table->foreignId('reviewrating_id');
             $table->string('ISBN');
             $table->string('bahasa');
-            $table->string('judul');
+            $table->string('judul')->unique();
             $table->string('penulis');
             $table->string('penerbit');
-            $table->integer('berat');
+            $table->integer('jmlHalaman');
             $table->integer('lebar');
             $table->integer('panjang');
             $table->text('deskripsi');

@@ -20,14 +20,14 @@ class ReviewratingFactory extends Factory
     {
         $faker = Faker::create();
 
-        $user_id = DB::table('users')->pluck('id');
-        $book_id = DB::table('books')->pluck('id');
+        $user_id = DB::table('users')->pluck('id')->toArray();
+        $book_id = DB::table('books')->pluck('id')->toArray();
         return [
             'user_id' => $faker->randomElement($user_id),
             'book_id' => $faker->randomElement($book_id),
             'rating' => $faker->numberBetween(3,5),
             'review' => $faker->paragraph(),
-            'jumlah' => $faker->randomNumber(3, false),
+            'jumlah' => $faker->numberBetween(1,10),
         ];
     }
 }

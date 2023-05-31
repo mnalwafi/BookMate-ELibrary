@@ -20,9 +20,11 @@ class UserFactory extends Factory
     {
         $faker = Faker::create();
 
-        $book_id = DB::table('books')->pluck('id');
+        $book_id = DB::table('books')->select('id')->get();
+        $reviewrating_id = DB::table('reviewratings')->pluck('id')->toArray();
         return [
-            'book_id' => $faker->randomDigitNot(0),
+            'book_id' => $faker->randomDigitNotNull(),
+            'reviewrating_id' => $faker->randomDigitNotNull(),
             'username' => $faker->unique()->userName(),
             'email' => $faker->unique()->safeEmail(),
             'password' => $faker->password(8,10),
