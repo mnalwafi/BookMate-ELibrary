@@ -1,7 +1,7 @@
 @extends('template.doctype')
 
 @section('link')
-    <link rel="stylesheet" href="css/Detail.css">
+    <link rel="stylesheet" href="/css/Detail.css">
 @endsection
 
 @section('content')
@@ -34,7 +34,7 @@
                             </svg>
                     </div>
                 </div>
-                
+
             </div>
             <div class="kecil">
                 {{-- <img src="https://covers.openlibrary.org/b/isbn/{{$book->ISBN}}-L.jpg" alt="Cover"> --}}

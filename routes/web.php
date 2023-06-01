@@ -34,4 +34,4 @@ Route::get('/signup', [SignupController::class, 'create']);
 
 Route::post('/signup', [SignupController::class, 'store']);
 
-Route::get('/{slug}', [BookController::class, 'show']);
+Route::get('/buku/{slug}', [BookController::class, 'show']);
