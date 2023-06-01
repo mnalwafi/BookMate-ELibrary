@@ -13,12 +13,13 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('book_id');
-            $table->foreignId('reviewrating_id');
+            $table->foreignId('book_id')->nullable();
+            $table->foreignId('rruser_id')->nullable();
             $table-> string('username')->unique();
+            $table-> string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('nomortelp');
+            $table->string('phone-number');
             $table->enum('level', ['user', 'admin']);
             $table->timestamps();
         });

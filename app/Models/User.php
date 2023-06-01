@@ -19,12 +19,6 @@ class User extends Authenticatable
      */
     protected $guarded = ['id'];
 
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
-
 
     /**
      * The attributes that should be hidden for serialization.
@@ -49,7 +43,7 @@ class User extends Authenticatable
         return $this->hasMany(Book::class);
     }
 
-    public function reviewrating(){
-        return $this->hasMany(Reviewrating::class);
+    public function Rruser(){
+        return $this->hasMany(Rruser::class);
     }
 }

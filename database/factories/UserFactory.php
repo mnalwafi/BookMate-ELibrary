@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Book;
+use App\Models\Reviewrating;
 use Faker\Factory as Faker;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -21,14 +23,14 @@ class UserFactory extends Factory
         $faker = Faker::create();
 
         $book_id = DB::table('books')->select('id')->get();
-        $reviewrating_id = DB::table('reviewratings')->pluck('id')->toArray();
         return [
-            'book_id' => $faker->randomDigitNotNull(),
-            'reviewrating_id' => $faker->randomDigitNotNull(),
+            'book_id' => $faker->numberBetween(1,20),
+            'rruser_id' => $faker->numberBetween(1,50),
             'username' => $faker->unique()->userName(),
+            'name' => $faker->Name(),
             'email' => $faker->unique()->safeEmail(),
             'password' => $faker->password(8,10),
-            'nomortelp' => $faker->unique()->phoneNumber(),
+            'phone-number' => $faker->unique()->phoneNumber(),
             'level' => $faker->randomElement(['admin', 'user'])
         ];
     }

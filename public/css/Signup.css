@@ -523,3 +523,31 @@ h1 {
     align-self: stretch;
     flex-grow: 0;
 }
+
+.is-invalid {
+    border: 1px solid red !important;
+}
+
+.is-invalid svg path {
+    stroke: red !important;
+}
+
+.invalid-message {
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    /* identical to box height, or 133% */
+
+    letter-spacing: 0.4px;
+
+    color: red;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}

@@ -18,7 +18,7 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', [BookController::class, 'index']);
+Route::get('/beranda', [BookController::class, 'index']);
 
 Route::get('/profile', [UserController::class, 'index']);
 

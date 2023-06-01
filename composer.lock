@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8e6e7fe5fd9d19060838a2fee2857ca4",
+    "content-hash": "0b0ec04ba4a1ee90f6ec8cc721ba3337",
     "packages": [
         {
             "name": "brick/math",
@@ -2995,6 +2995,61 @@
             "time": "2023-04-15T23:01:58+00:00"
         },
         {
+            "name": "stuyam/laravel-phone-validator",
+            "version": "1.0.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stuyam/laravel-phone-validator.git",
+                "reference": "e3ec897125bea0b89ce4dd46e5e18627a91f8c81"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stuyam/laravel-phone-validator/zipball/e3ec897125bea0b89ce4dd46e5e18627a91f8c81",
+                "reference": "e3ec897125bea0b89ce4dd46e5e18627a91f8c81",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.0|^6.0|^7.0|^8.0|^9.0|^10.0",
+                "twilio/sdk": "^5.0|^6.0|^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "StuYam\\PhoneValidator\\PhoneValidatorServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "StuYam\\PhoneValidator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stuart Yamartino",
+                    "email": "stuartyamartino@gmail.com"
+                }
+            ],
+            "description": "A phone validator for Laravel using the free Twilio phone lookup service.",
+            "keywords": [
+                "laravel",
+                "phone",
+                "twilio",
+                "validation",
+                "validator"
+            ],
+            "support": {
+                "issues": "https://github.com/stuyam/laravel-phone-validator/issues",
+                "source": "https://github.com/stuyam/laravel-phone-validator/tree/1.0.10"
+            },
+            "time": "2023-04-01T18:54:49+00:00"
+        },
+        {
             "name": "symfony/console",
             "version": "v6.2.10",
             "source": {
@@ -5241,6 +5296,55 @@
                 "source": "https://github.com/tijsverkoyen/CssToInlineStyles/tree/2.2.6"
             },
             "time": "2023-01-03T09:29:04+00:00"
+        },
+        {
+            "name": "twilio/sdk",
+            "version": "7.4.1",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:twilio/twilio-php.git",
+                "reference": "427baa8472006bf0ec6aa1bc79be10ae37b2389f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twilio/twilio-php/zipball/427baa8472006bf0ec6aa1bc79be10ae37b2389f",
+                "reference": "427baa8472006bf0ec6aa1bc79be10ae37b2389f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "require-dev": {
+                "guzzlehttp/guzzle": "^6.3 || ^7.0",
+                "phpunit/phpunit": ">=7.0 < 10"
+            },
+            "suggest": {
+                "guzzlehttp/guzzle": "An HTTP client to execute the API requests"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Twilio\\": "src/Twilio/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Twilio API Team",
+                    "email": "api@twilio.com"
+                }
+            ],
+            "description": "A PHP wrapper for Twilio's API",
+            "homepage": "https://github.com/twilio/twilio-php",
+            "keywords": [
+                "api",
+                "sms",
+                "twilio"
+            ],
+            "time": "2023-05-18T07:58:57+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

@@ -10,9 +10,9 @@ class BookController extends Controller
     public function index(){
         return view('beranda', [
             "title" => "Beranda",
-            "bookrecommend" => Reviewrating::with(['book', 'user'])->where('jumlah', '>', '300')->orderBy('jumlah', 'DESC')->get(),
-            "booklatest" => Book::with(['reviewrating', 'user'])->latest()->get(),
-            "bookpopular" => Reviewrating::with(['book', 'user'])->where('rating', 4)->orWhere('rating', 5)->orderBy('rating', 'DESC')->get()
+            "bookrecommend" => Reviewrating::with(['book'])->where('rating', 4)->orWhere('rating', 5)->orderBy('rating', 'DESC')->get(),
+            "bookpopular" => Reviewrating::with(['book'])->orderBy('jumlah', 'DESC')->get(),
+            "booklatest" => Book::with(['reviewrating', 'user'])->latest()->get()
         ]);
     }
 
