@@ -9,6 +9,10 @@
     display: none;
 }
 
+.all-section {
+    padding: 192px 100px 80px;
+}
+
 .all-details {
     display: flex;
     flex-direction: row;
@@ -17,7 +21,6 @@
     position: absolute;
     width: auto;
     height: auto;
-    padding: 192px 100px 80px;
     order: 1;
 }
 
@@ -32,8 +35,6 @@
 
     margin-bottom: 104px;
 }
-
-h5 {}
 
 .cover {
     display: flex;
@@ -57,12 +58,6 @@ h5 {}
     top: 3.5px;
 } */
 
-/* .pinjam-bookmark {
-    padding-top: 16px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-} */
 
 .pinjam-bookmark {
     display: flex;
@@ -207,12 +202,76 @@ section h1 {
 .review-rating {
     font-family: 'Product Sans';
     font-style: normal;
-    font-weight: 700;
-    font-size: 22px;
-    line-height: 28px;
+    line-height: 32px;
     color: #094067;
     flex: none;
     order: 2;
     align-self: stretch;
     flex-grow: 0;
+    padding-top: 900px;
+}
+
+.review-rating h3 {
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.rating-komen{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.avg-rating {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.rating {
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 45px;
+    color: #E0B442;
+    padding-left: 20px;
+}
+
+.beri-komen a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.beri-komen p {
+    color: #3DA9FC;
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 0.5px;
+}
+
+.komentar h4 p {
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 0.5px;
+}
+
+.semua-komen a {
+    padding-top: 20px;
+    color: #3DA9FC;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
