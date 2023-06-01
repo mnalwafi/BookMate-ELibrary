@@ -1,5 +1,6 @@
 * {
     margin-inline: 0;
+    margin-block: 0;
     font-family: 'Product Sans';
     font-style: normal;
 }
@@ -20,16 +21,16 @@
     order: 1;
 }
 
-p {
+.deskripsi p {
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
     text-align: justify;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     color: #094067;
     flex: none;
-    /* order: 1;
-    flex-grow: 0; */
+
+    margin-bottom: 104px;
 }
 
 h5 {}
@@ -42,9 +43,10 @@ h5 {}
     gap: 48px;
 }
 
-.cover .besar {
-    width: 313px;
-    height: 500px;
+.cover .besar img {
+    width: 304px;
+    height: 456px;
+    margin-bottom: 24px;
 }
 
 /* .cover .kecil {
@@ -55,11 +57,22 @@ h5 {}
     top: 3.5px;
 } */
 
-.pinjam-bookmark {
+/* .pinjam-bookmark {
     padding-top: 16px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+} */
+
+.pinjam-bookmark {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0px;
+
+    width: 304px;
+    height: 56px;
 }
 
 .pinjam-buku {
@@ -103,6 +116,8 @@ section h3 {
     line-height: 28px;
     color: #094067;
 
+    margin-bottom: 16px;
+
     flex: none;
     order: 0;
     flex-grow: 0;
@@ -115,6 +130,7 @@ section h2 {
     line-height: 36px;
     color: #5F6C7B;
     flex: none;
+    margin-bottom: 16px;
     /* order: 0; */
     /* flex-grow: 0; */
 }
@@ -127,7 +143,7 @@ section h1 {
     flex: none;
     order: 1;
     flex-grow: 0;
-    padding-bottom: 20px;
+    margin-bottom: 56px;
 }
 
 .deskripsi-detail {
@@ -157,13 +173,18 @@ section h1 {
 }
 
 .detail h4 {
+    font-family: 'Product Sans';
+    font-style: normal;
     font-weight: 700;
     font-size: 16px;
-    line-height: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
     letter-spacing: 0.5px;
+
+    /* Paragraph */
+
     color: #5F6C7B;
-    order: 0;
-    flex-grow: 0;
 }
 
 .detail p {
@@ -175,6 +196,8 @@ section h1 {
     flex: none;
     order: 1;
     flex-grow: 0;
+
+    margin-bottom: 16px;
 }
 
 .detail-kanan {
