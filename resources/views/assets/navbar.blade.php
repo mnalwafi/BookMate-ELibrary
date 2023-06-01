@@ -1,5 +1,5 @@
 <nav>
-    <div id="logo"></div>
+    <a href="/"><div id="logo"></div></a>
     <!-- Search Bar -->
     <form action="" method="GET" class="search-bar">
         <img src="/img/icon/Kaca Pembesar.png" alt="Kaca Pembesar" class="kaca-pembesar">
