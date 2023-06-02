@@ -7,7 +7,7 @@
 @section('content')
     @include('assets.navbar')
 
-    <form action="/logout" method="post" class="logout">
+    <form action="{{route('logout')}}" method="post" class="logout">
         @csrf
         <button>logout</button>
     </form>

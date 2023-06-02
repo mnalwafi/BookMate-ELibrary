@@ -1,11 +1,13 @@
 <?php
 
 use App\Models\Book;
+use App\Models\rruser;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SignupController;
-use App\Http\Controllers\UserController;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,9 +32,16 @@ Route::get('/disimpan', function () {
 
 Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
-Route::post('/logout', [LoginController::class, 'logout']);
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/signup', [SignupController::class, 'create'])->name('signup')->middleware('guest');
 Route::post('/signup', [SignupController::class, 'store']);
 
 Route::get('/book/{slug}', [BookController::class, 'show'])->name('bookdetail');
+
+Route::get('/sheet', function () {
+    return view('sheet', [
+        "title" => "Disimpan",
+        "bookdata" => Book::with(['rruser'])->join('rrusers', 'books.id', '=', 'rrusers.book_id')->get()
+    ]);
+});
