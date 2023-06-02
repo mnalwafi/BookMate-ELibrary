@@ -28,7 +28,7 @@ return new class extends Migration
             $table->date('tanggalterbit');
             $table->integer('kuantitas');
             $table->string('cover');
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

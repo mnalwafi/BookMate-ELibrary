@@ -20,7 +20,7 @@ use App\Http\Controllers\UserController;
 
 Route::get('/beranda', [BookController::class, 'index']);
 
-Route::get('/profile', [UserController::class, 'index']);
+Route::get('/profile', [UserController::class, 'index'])->middleware('auth');
 
 Route::get('/disimpan', function () {
     return view('disimpan', [
@@ -28,10 +28,10 @@ Route::get('/disimpan', function () {
     ]);
 });
 
-Route::get('/login', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->middleware('guest');
+Route::post('/login', [LoginController::class, 'authenticate']);
 
-Route::get('/signup', [SignupController::class, 'create']);
-
+Route::get('/signup', [SignupController::class, 'create'])->middleware('guest');
 Route::post('/signup', [SignupController::class, 'store']);
 
 Route::get('/buku/{slug}', [BookController::class, 'show']);

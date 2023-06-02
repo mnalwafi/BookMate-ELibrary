@@ -236,10 +236,8 @@ h1 {
 }
 
 .syarat-ketentuan{
-    width: 600px;
     padding-top: 16px;
     padding-bottom: 16px;
-    text-align: center;
 
     /* Title/Title Medium */
 
@@ -264,6 +262,15 @@ h1 {
     align-self: stretch;
     flex-grow: 0;
     }
+
+.syarat-ketentuan a::after {
+    content: '*';
+    color: #EB0029;
+}
+
+.syarat-ketentuan a:any-link {
+    color: #3DA9FC;
+}
 
 .submit {
     display: flex;
@@ -525,11 +532,11 @@ h1 {
 }
 
 .is-invalid {
-    border: 1px solid red !important;
+    border: 1px solid #EB0029 !important;
 }
 
 .is-invalid svg path {
-    stroke: red !important;
+    stroke: #EB0029 !important;
 }
 
 .invalid-message {
@@ -542,7 +549,7 @@ h1 {
 
     letter-spacing: 0.4px;
 
-    color: red;
+    color: #EB0029;
 
 
     /* Inside auto layout */

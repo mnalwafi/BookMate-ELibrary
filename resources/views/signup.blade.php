@@ -116,11 +116,15 @@
                         </div>
                     </div>
                     <div class="syarat-ketentuan">
-                    </h3>Dengan signup, Anda menyetujui <a href="">Syarat & Ketentuan</a> dan <a href="">Kebijakan Privasi</a>
-                    <h3>
+                        </h3>
+                        Dengan membuat akun, Anda menyetujui
+                            <a href="">Syarat & Ketentuan</a>
+                        dan
+                            <a href="">Kebijakan Privasi.</a>
+                        <h3>
                     </div>
                     <div class="submit">
-                        <button class="button-logsign">Sign up</button>
+                        <button class="button-logsign">Buat akun</button>
                         <a href="/login">Log in</a>
                     </div>
                 </form>

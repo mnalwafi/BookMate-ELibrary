@@ -19,7 +19,7 @@ class SignupController extends Controller
             'name' => 'required|max:255',
             'username' => 'required|min:3|max:12|alpha_dash:ascii|unique:users',
             'email' => 'required|email:dns|unique:users',
-            'phone-number'=>'required|phone',
+            'phone-number'=>'required|phone|unique:users',
             'password' => 'required|min:5'
         ]);
 
@@ -27,6 +27,6 @@ class SignupController extends Controller
 
         User::create($validatedData);
 
-        return redirect ('/login');
+        return redirect ('/login')->with('registerSuccess', 'Akun kamu berhasil dibuat 🎉');
     }
 }
