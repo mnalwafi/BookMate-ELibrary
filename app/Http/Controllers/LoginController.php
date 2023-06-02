@@ -21,9 +21,19 @@ class LoginController extends Controller
 
         if(Auth::attempt($credentials)) {
             $request->session()->regenerate() ;
-            return redirect()->intended ('/beranda');
+            return redirect()->intended ('home');
         }
 
         return back()->with('loginError', 'Login gagal, silahkan coba lagi!');
+    }
+
+    public function logout(Request $request){
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('home');
     }
 }

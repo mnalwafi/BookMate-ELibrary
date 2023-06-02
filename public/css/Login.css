@@ -61,7 +61,6 @@ main {
     gap: 16px;
 
     width: 600px;
-    height: 76px;
 
 
     /* Inside auto layout */
@@ -123,7 +122,6 @@ main {
     gap: 24px;
 
     width: 480px;
-    height: 488px;
 
 
     /* Inside auto layout */
@@ -558,6 +556,36 @@ h1 {
     flex: none;
     order: 2;
     flex-grow: 0;
+}
+
+.guestlog {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+
+    position: absolute;
+    right: 120px;
+    bottom: 80px;
+}
+
+.guestlog h3 {
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.5px;
+
+    /* Button */
+
+    color: #3DA9FC;
 }
 
 .is-invalid {

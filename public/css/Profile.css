@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    margin-block: 0;
+    margin-inline: 0;
+    border: 0;
+}
+
+.logout {
+    transform: translateY(500px);
+}
+
+.logout button {
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    color: #FFFFFF;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 24px;
+
+    width: 600px;
+    height: 56px;
+
+    /* Button */
+
+    background: #3DA9FC;
+    border-radius: 8px;
+
+    transition-duration: .3s;
+}

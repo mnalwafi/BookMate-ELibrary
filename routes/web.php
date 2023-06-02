@@ -18,20 +18,21 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/beranda', [BookController::class, 'index']);
+Route::get('/home', [BookController::class, 'index'])->name('home');
 
-Route::get('/profile', [UserController::class, 'index'])->middleware('auth');
+Route::get('/profile', [UserController::class, 'index'])->middleware('auth')->name('profile');
 
 Route::get('/disimpan', function () {
     return view('disimpan', [
         "title" => "Disimpan"
     ]);
-});
+})->name('saved');
 
-Route::get('/login', [LoginController::class, 'index'])->middleware('guest');
+Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/signup', [SignupController::class, 'create'])->middleware('guest');
+Route::get('/signup', [SignupController::class, 'create'])->name('signup')->middleware('guest');
 Route::post('/signup', [SignupController::class, 'store']);
 
-Route::get('/buku/{slug}', [BookController::class, 'show']);
+Route::get('/book/{slug}', [BookController::class, 'show'])->name('bookdetail');
