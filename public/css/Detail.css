@@ -9,7 +9,7 @@
     display: none;
 }
 
-.all-section {
+.container {
     padding: 192px 100px 80px;
 }
 
@@ -100,6 +100,10 @@
 
 .bookmark:hover {
     cursor: pointer;
+}
+
+section {
+    padding-right: 80px;
 }
 
 section h3 {
