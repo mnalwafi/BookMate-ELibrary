@@ -38,7 +38,7 @@ class BookController extends Controller
     public function show($slug)
     {
         $book = Book::where('slug', $slug)->first();
-        $reviewrating = rruser::select('rrusers.*', 'books.slug')->join('books', 'rrusers.book_id', '=','books.id')->where('books.slug', $slug)->get();
+        $reviewrating = rruser::select('rrusers.*', 'books.slug')->join('books', 'rrusers.book_id', '=','books.id')->where('books.slug', $slug)->latest()->get();
         if ($book) {
             return view('detail-buku', [
                 "title" => "Detail",
