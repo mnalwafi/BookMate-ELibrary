@@ -26,8 +26,6 @@ class BookFactory extends Factory
         $rruser_id = DB::table('rrusers')->pluck('id')->toArray();
         return [
             'user_id' => $faker->numberBetween(1,10),
-            'reviewrating_id' => $faker->unique()->numberBetween(1,20),
-            'rruser_id' => $faker->unique()->numberBetween(1,50),
             'ISBN' => $faker->unique()->randomElement(['9781423146735','9780786838653','9780747532743','9780553593716','9780064471046','6020351173','602033211X','6020331601','6020301125','1480769134','1368081150','1338596705','133821666X','1250233895','1250091667','054579143X','0545791340','0063080087','006289594X','6020324788']),
             'bahasa' => $faker->randomElement(['Indonesia', 'Inggris']),
             'judul' => $faker->sentence(),

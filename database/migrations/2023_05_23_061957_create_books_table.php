@@ -14,8 +14,6 @@ return new class extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->foreignId('reviewrating_id')->nullable();
-            $table->foreignId('rruser_id')->nullable();
             $table->string('ISBN');
             $table->string('bahasa');
             $table->string('judul')->unique();

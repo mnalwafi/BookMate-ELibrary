@@ -27,12 +27,33 @@
 
 @endfor --}}
 
+{{-- {{count($bookdata)}} --}}
+
 @foreach ($bookdata as $book)
-    id {{$book}} punya rating sebanyak
-    @foreach ($book->rruser as $rruser)
-        {{ $rruser->rating}}
+
+{{$book->user_id}}
+<br>
+
+    {{-- @if ($i!=0 || $i!=count($bookdata))
+        @if ($bookdata[$i]->id  !== $bookdata[$i+1]->id)
+            @for ($j=0; $j < count($bookdata[$i]->rruser); $j++)
+            {{$bookdata[$i]->rruser[$j]->avg('rating')}}
+            @endfor
+            <br>
+        @endif
+    @else
+        @for ($j=0; $j < count($bookdata[$i]->rruser); $j++)
+        {{$bookdata[$i]->rruser[$j]->avg('rating')}}
+        @endfor
+        <br>
+    @endif --}}
+
+    {{-- {{$book->rruser[0]->avg('rating')}} --}}
+    {{-- id {{$book}} punya rating sebanyak
+    @foreach ($book as $rruser)
+        {{ $rruser->avg('rating')}}
     @endforeach
-    <br>
+    <br> --}}
 @endforeach
 
 @endsection

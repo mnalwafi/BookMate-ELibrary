@@ -2,6 +2,7 @@
 
 use App\Models\Book;
 use App\Models\rruser;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\UserController;
@@ -42,6 +43,9 @@ Route::get('/book/{slug}', [BookController::class, 'show'])->name('bookdetail');
 Route::get('/sheet', function () {
     return view('sheet', [
         "title" => "Disimpan",
-        "bookdata" => Book::with(['rruser'])->join('rrusers', 'books.id', '=', 'rrusers.book_id')->get()
+        "bookdata" => Book::with(['rruser'])->select('books.*', 'rrusers.review', 'rruser.rating', DB::raw('COUNT(rrusers.rating) as COUNT'), DB::raw('AVG(rrusers.rating) as AVG'))
+        ->join('rrusers','books.id','=','rrusers.book_id')
+        ->orderBy('books.id','desc')
+        ->get()
     ]);
 });
