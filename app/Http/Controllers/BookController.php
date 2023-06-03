@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\rruser;
 use App\Models\Reviewrating;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -37,10 +38,12 @@ class BookController extends Controller
     public function show($slug)
     {
         $book = Book::where('slug', $slug)->first();
+        $reviewrating = rruser::select('rrusers.*', 'books.slug')->join('books', 'rrusers.book_id', '=','books.id')->where('books.slug', $slug)->get();
         if ($book) {
             return view('detail-buku', [
                 "title" => "Detail",
-                "bookdata" => $book
+                "bookdata" => $book,
+                "reviewrating" => $reviewrating
             ]);
         }
         abort(404);
