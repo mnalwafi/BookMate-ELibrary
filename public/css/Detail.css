@@ -10,18 +10,18 @@
 }
 
 .container {
-    padding: 192px 100px 80px;
+    padding: 192px 120px 80px;
 }
 
 .all-details {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    gap: 24px;
-    position: absolute;
+    gap: 0px;
     width: auto;
     height: auto;
-    order: 1;
+
+    margin-bottom: 48px;
 }
 
 .deskripsi p {
@@ -41,7 +41,8 @@
     flex-direction: row;
     align-items: flex-start;
     padding: 0px;
-    gap: 48px;
+    gap: 24px;
+    margin-right: 72px;
 }
 
 .cover .besar img {
@@ -103,11 +104,10 @@
 }
 
 section {
-    padding-right: 80px;
+    width: 950px;
 }
 
 section h3 {
-    width: 718px;
     height: 28px;
 
     font-weight: 700;
@@ -145,13 +145,7 @@ section h1 {
     margin-bottom: 56px;
 }
 
-.deskripsi-detail {
-    /* padding-left: 100px; */
-    width: 970px;
-}
-
 .deskripsi {
-    width: 970px;
     height: auto;
     font-style: normal;
     font-weight: 400;
@@ -160,10 +154,6 @@ section h1 {
     text-align: justify;
     letter-spacing: 0.5px;
     color: #094067;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-    padding-bottom: 24px;
 }
 
 .detail {
@@ -212,7 +202,6 @@ section h1 {
     order: 2;
     align-self: stretch;
     flex-grow: 0;
-    padding-top: 900px;
 }
 
 .review-rating h3 {
@@ -278,4 +267,38 @@ section h1 {
     justify-content: center;
     align-items: center;
     gap: 10px;
+}
+
+/* tambahan wafi */
+.review {
+    margin-bottom: 10px;
+}
+
+.review h4, .review .star {
+    margin-bottom: 8px;
+}
+
+.review .star {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+
+    height: 24px;
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.kecil {
+    width: 80px;
+    height: 120px;
+
+    /* Background and Button Text */
+
+    background: #FFFFFF;
+    border: 5px solid #CFCFCF;
+    border-radius: 15px;
 }

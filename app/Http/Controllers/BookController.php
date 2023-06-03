@@ -28,7 +28,6 @@ class BookController extends Controller
                                                 ->get(),
             "booklatest" => Book::with(['rruser'])->select('books.id', 'books.slug', 'books.judul', 'books.penulis', 'books.ISBN', 'books.tanggalterbit', DB::raw('COUNT(rrusers.rating) as COUNT'), DB::raw('AVG(rrusers.rating) as AVG'))
                                                 ->join('rrusers','books.id','=','rrusers.book_id')
-                                                ->where('rating', '>', 3)
                                                 ->groupBy('books.id')
                                                 ->orderBy('books.tanggalterbit', 'desc')
                                                 ->get(),
@@ -38,7 +37,7 @@ class BookController extends Controller
     public function show($slug)
     {
         $book = Book::where('slug', $slug)->first();
-        $reviewrating = rruser::select('rrusers.*', 'books.slug')->join('books', 'rrusers.book_id', '=','books.id')->where('books.slug', $slug)->latest()->get();
+        $reviewrating = rruser::with(['user'])->select('rrusers.*', 'books.slug')->join('books', 'rrusers.book_id', '=','books.id')->where('books.slug', $slug)->latest()->get();
         if ($book) {
             return view('detail-buku', [
                 "title" => "Detail",
