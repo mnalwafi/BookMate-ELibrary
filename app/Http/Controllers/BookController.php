@@ -7,6 +7,7 @@ use App\Models\rruser;
 use App\Models\Reviewrating;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class BookController extends Controller
 {
@@ -38,6 +39,9 @@ class BookController extends Controller
     {
         $book = Book::where('slug', $slug)->first();
         $reviewrating = rruser::with(['user'])->select('rrusers.*', 'books.slug')->join('books', 'rrusers.book_id', '=','books.id')->where('books.slug', $slug)->latest()->get();
+
+        Session::put('detail_url', request()->fullUrl());
+
         if ($book) {
             return view('detail-buku', [
                 "title" => "Detail",

@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    margin-block: 0;
+    margin-inline: 0;
+
+    border: 0;
+}
+
+.rate {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 0px;
+    gap: 24px;
+}
+
+.rate:not(:checked) > input {
+    position:absolute;
+    display: none;
+}
+
+.rate:not(:checked) > label svg {
+    float:right;
+    width:44px;
+    height: 44px;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    fill: white;
+}
+
+.rate > input:checked ~ label svg {
+    fill: #F5C549;
+}
+/* .rate:not(:checked) > label:hover, */
+/* .rate:not(:checked) > label:hover ~ label {
+    fill: #F5C549;
+} */
+/*
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label svg,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label svg,
+.rate > label:hover ~ input:checked ~ label {
+    fill: #F5C549;
+} */
+
+
+/* .rating-container .form-control:hover, .rating-container .form-control:focus{
+    background: #fff;
+    border: 1px solid #ced4da;
+}
+
+.rating-container textarea:focus, .rating-container input:focus {
+    color: #000;
+} */
+/*
+.rated {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+
+.rated:not(:checked) > input {
+    position:absolute;
+    display: none;
+}
+
+.rated:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ffc700;
+}
+
+.rated > input:checked ~ label {
+    color: #ffc700;
+}
+
+.rated:not(:checked) > label:hover,
+.rated:not(:checked) > label:hover ~ label {
+    color: #deb217;
+}
+
+.rated > input:checked + label:hover,
+.rated > input:checked + label:hover ~ label,
+.rated > input:checked ~ label:hover,
+.rated > input:checked ~ label:hover ~ label,
+.rated > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+} */
+
+.back {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+
+    position: absolute;
+    height: 24px;
+    left: 120px;
+    top: 160px;
+}
+
+.back h3 {
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.5px;
+
+    /* Button */
+
+    color: #3DA9FC;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 48px;
+
+    position: absolute;
+    width: 85.7%;
+    height: 655px;
+    left: 120px;
+    top: 222px;
+}
+
+.form-control button {
+    padding: 16px 24px;
+    gap: 10px;
+
+    box-sizing: border-box;
+    cursor: pointer;
+
+    width: 100%;
+
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    letter-spacing: 0.5px;
+
+    /* Background and Button Text */
+
+    color: #FFFFFF;
+
+    appearance: none;
+    /* Button */
+
+    background: #3DA9FC;
+    border-radius: 8px;
+}
+
+.rating h3 {
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 28px;
+
+    margin-bottom: 16px;
+
+    color: #5F6C7B;
+}
+
+.review {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+
+    width: 100%;
+}
+
+.review h3 {
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 28px;
+    /* identical to box height, or 127% */
+
+
+    /* Paragraph */
+
+    color: #5F6C7B;
+}
+
+.review textarea {
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 10px;
+
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+    letter-spacing: 0.1px;
+
+    width: 100%;
+    height: 379px;
+
+    /* Headline */
+
+    border: 1px solid #094067;
+    border-radius: 8px;
+}
+
+.review textarea::placeholder {
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+    letter-spacing: 0.1px;
+
+    /* Neutral/Neutral-300 */
+
+    color: #C1C1C1;
+}
+
+.invalid-message {
+    position: absolute;
+
+    margin-top: 16px;
+
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    /* identical to box height, or 133% */
+
+    letter-spacing: 0.4px;
+
+    color: #EB0029;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+

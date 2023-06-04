@@ -7,7 +7,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SheetController;
 use App\Http\Controllers\SignupController;
+use App\Http\Controllers\ReviewratingController;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 
 /*
@@ -22,6 +24,9 @@ use Illuminate\Contracts\Database\Eloquent\Builder;
 */
 
 Route::get('/home', [BookController::class, 'index'])->name('home');
+Route::get('/', function () {
+    return redirect('/home');
+});
 
 Route::get('/profile', [UserController::class, 'index'])->middleware('auth')->name('profile');
 
@@ -40,12 +45,7 @@ Route::post('/signup', [SignupController::class, 'store']);
 
 Route::get('/book/{slug}', [BookController::class, 'show'])->name('bookdetail');
 
-Route::get('/sheet', function () {
-    return view('sheet', [
-        "title" => "Disimpan",
-        "bookdata" => Book::with(['rruser'])->select('books.*', 'rrusers.review', 'rruser.rating', DB::raw('COUNT(rrusers.rating) as COUNT'), DB::raw('AVG(rrusers.rating) as AVG'))
-        ->join('rrusers','books.id','=','rrusers.book_id')
-        ->orderBy('books.id','desc')
-        ->get()
-    ]);
-});
+Route::get('/book/{slug}/reviewrating/create', [ReviewratingController::class, 'create'])->middleware('auth');
+Route::post('/book/{slug}', [ReviewratingController::class, 'store']);
+
+Route::get('/sheet', [SheetController::class, 'index']);

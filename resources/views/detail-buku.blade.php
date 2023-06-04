@@ -2,11 +2,21 @@
 
 @section('link')
     <link rel="stylesheet" href="/css/Detail.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 @endsection
 
 @section('content')
     @include('assets.navbar')
     <div class="container">
+        @if (session()->has('registerSuccess'))
+        <div class="alert alert-success">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 26C21.5228 26 26 21.5228 26 16C26 10.4772 21.5228 6 16 6C10.4772 6 6 10.4772 6 16C6 21.5228 10.4772 26 16 26Z" fill="#12B76A" stroke="#12B76A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20.5 13L14.5 19L12 16.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <strong>{{ session('registerSuccess') }}</strong>
+        </div>
+        @endif
         <div class="all-details">
             <div class="cover">
                 <div class="besar">
@@ -117,7 +127,7 @@
                     </div>
                 </div>
                 <div class="beri-komen">
-                    <a href="/buku/{{$bookdata->slug}}/create">
+                    <a href="/book/{{$bookdata->slug}}/reviewrating/create">
                         <p>Beri komentar</p>
                         <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M16.7771 0.808271C17.168 0.417217 17.802 0.417277 18.1928 0.808406C18.5834 1.19929 18.5833 1.83279 18.1926 2.22354L9.99967 10.4164C9.81287 10.6032 9.55969 10.7084 9.29552 10.709C8.74362 10.7101 8.29537 10.262 8.29459 9.71006C8.29421 9.44416 8.39965 9.18841 8.58764 9.00036L16.7771 0.808271Z" fill="#3DA9FC"/>
@@ -161,5 +171,13 @@
             @endif
         </div>
     </div>
-
+    <script>
+        $(document).ready(function () {
+            window.setTimeout(function() {
+                $(".alert").fadeTo(1000, 0).slideUp(1000, function(){
+                    $(this).remove();
+                });
+            }, 2000);
+        });
+    </script>
 @endsection

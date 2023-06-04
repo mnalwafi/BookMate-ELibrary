@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('book_id');
             $table->foreignId('user_id');
             $table->double('rating');
-            $table->longText('review');
+            $table->longText('review')->nullable();
             $table->timestamps();
         });
     }
