@@ -24,12 +24,10 @@ class UserFactory extends Factory
 
         $book_id = DB::table('books')->select('id')->get();
         return [
-            'book_id' => $faker->numberBetween(1,20),
-            'rruser_id' => $faker->numberBetween(1,50),
             'username' => $faker->unique()->userName(),
             'name' => $faker->Name(),
             'email' => $faker->unique()->safeEmail(),
-            'password' => $faker->password(8,10),
+            'password' => bcrypt('password'),
             'phone-number' => $faker->unique()->phoneNumber(),
             'level' => $faker->randomElement(['admin', 'user'])
         ];
