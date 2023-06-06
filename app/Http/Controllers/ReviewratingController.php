@@ -18,7 +18,7 @@ class ReviewratingController extends Controller
         ]);
     }
 
-    public function store(Request $request, $slug){
+    public function store(Request $request){
 
 
         $validatedData = $request->validate([

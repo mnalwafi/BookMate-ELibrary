@@ -2,6 +2,28 @@
 
 @section('content')
 
+
+{{auth()->user()->username}}
+
+@foreach ($userbook as $user)
+    <h3>{{$user->book_id}}</h3>
+    <p>{{$user->book_judul}}</p>
+@endforeach
+
+=================================================================================================================================
+
+review and rating
+<br><br>
+
+@foreach ($userreview as $review)
+    <h1>id review {{$review->id}}</h1>
+    <h2>judul buku {{$review->book_judul}}</h2>
+    <h3>rating {{$review->rating}}</h3>
+    <p>{{$review->review}}</p>
+@endforeach
+
+{{-- {{$userdata->judul[0]}} --}}
+
 {{-- @php
     foreach ($bookdata as $book) {
         echo $book->rruser->id;
@@ -29,7 +51,7 @@
 
 {{-- {{count($bookdata)}} --}}
 
-@foreach ($bookdata as $book)
+{{-- @foreach ($bookdata as $book)
 
 {{$book->user_id}}
 <br>
@@ -54,6 +76,6 @@
         {{ $rruser->avg('rating')}}
     @endforeach
     <br> --}}
-@endforeach
+{{-- @endforeach --}}
 
 @endsection

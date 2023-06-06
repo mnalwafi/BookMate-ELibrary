@@ -43,7 +43,7 @@ class User extends Authenticatable
         return $this->hasMany(Book::class);
     }
 
-    public function Rruser(){
-        return $this->hasMany(Rruser::class);
+    public function rruser(){
+        return $this->hasMany(rruser::class);
     }
 }

@@ -15,11 +15,7 @@ class Book extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function reviewrating(){
-        return $this->belongsTo(Reviewrating::class);
-    }
-
     public function rruser(){
-        return $this->hasMany(Rruser::class);
+        return $this->hasMany(rruser::class);
     }
 }
