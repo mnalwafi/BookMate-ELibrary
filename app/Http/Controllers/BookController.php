@@ -52,6 +52,15 @@ class BookController extends Controller
         abort(404);
     }
 
+    public function showBooks(){
+        $books = Book::all();
+
+        return view('semua-buku', [
+            'title' => 'Semua Buku',
+            'books' => $books,
+        ]);
+    }
+
     public function create()
     {
     }

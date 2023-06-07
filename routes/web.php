@@ -53,3 +53,5 @@ Route::get('/book/{slug}/reviewrating/create', [ReviewratingController::class, '
 Route::post('/book/{slug}', [ReviewratingController::class, 'store']);
 
 Route::get('/sheet', [SheetController::class, 'index'])->middleware('auth');
+
+Route::get('/buku', [BookController::class, 'showBooks']);
