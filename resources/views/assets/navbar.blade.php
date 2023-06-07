@@ -8,6 +8,6 @@
     <ul>
         <li><a href="{{route('home')}}" class="{{Request::is('home') ? 'active' : ''}}">Beranda</a></li>
         <li><a href="{{route('saved')}}" class="{{Request::is('disimpan') ? 'active' : ''}}">Disimpan</a></li>
-        <li><a href="{{route('profile')}}" class="{{Request::is('profile') ? 'active' : ''}}">Profile</a></li>
+        <li><a href="{{route('profile')}}" class="{{Request::is('profile*') ? 'active' : ''}}">Profile</a></li>
     </ul>
 </nav>

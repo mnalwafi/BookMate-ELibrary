@@ -3,6 +3,7 @@
     margin-block: 0;
     margin-inline: 0;
     border: 0;
+    appearance: none;
 }
 
 .container {
@@ -104,30 +105,32 @@ a{
     color: #5F6C7B;
 }
 
-a.active {
+.pactive {
     color: #3DA9FC;
 }
 
 .tab-option ul{
-    width: 100%;
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
     gap: 56px;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 80px 40px 20px 40px;
-}
-
-.tab-option {
-    grid-area: tab-option;
     font-family: 'Product Sans';
     font-style: normal;
     font-weight: 700;
     font-size: 22px;
     line-height: 28px;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
+}
+
+.tab-option {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    isolation: isolate;
+
+    transform: translateY(48px);
+
+    padding: 0px 40px 0px 40px;
 }
 
 .main-content {
@@ -143,14 +146,6 @@ a.active {
     padding-right: 100px;
     border-radius: 16px;
     padding-right: 4px
-}
-
-#buku-dipinjam:not(:target), #review-rating:not(:target), #buku-diunggah:not(:target){
-    display: none;
-}
-
-#buku-dipinjam:target, #review-rating:target, #buku-diunggah:target{
-    display: visible;
 }
 
 #buku-dipinjam{
@@ -191,7 +186,8 @@ a.active {
 }
 
 #review-rating {
-    display: flex;
+    display: block;
+    grid-template-rows: auto;
     justify-content: space-between;
     /* align-items: end; */
 }
@@ -252,4 +248,42 @@ a.active {
     flex: none;
     order: 2;
     flex-grow: 0;
+}
+
+.review {
+    width: 882px;
+}
+
+.review .atas {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+
+    margin-bottom: 8px;
+}
+
+.review .atas button {
+    background-color: transparent;
+}
+
+.review .bintang {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+
+    margin-bottom: 14px;
+}
+
+.review p {
+    margin-bottom: 24px;
+}
+
+.review hr {
+    border: 1px solid #EAEAEA;
+    margin-bottom: 24px;
 }

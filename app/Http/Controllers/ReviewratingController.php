@@ -32,4 +32,10 @@ class ReviewratingController extends Controller
 
         return redirect(session('detail_url'))->with('registerSuccess', 'Selamat, ulasan kamu berhasil diunggah 🎉');
     }
+
+    public function destroy(rruser $rruser){
+        rruser::destroy($rruser->id);
+
+        return redirect('/profile/reviewrating')->with('registerSuccess', 'Selamat, ulasan kamu berhasil diunggah 🎉');
+    }
 }

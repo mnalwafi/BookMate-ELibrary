@@ -29,6 +29,10 @@ Route::get('/', function () {
 });
 
 Route::get('/profile', [UserController::class, 'index'])->middleware('auth')->name('profile');
+Route::get('/profile/reviewrating', [UserController::class, 'review'])->middleware('auth')->name('profile');
+Route::get('/profile/buku-diunggah', [UserController::class, 'unggah'])->middleware('auth')->name('profile');
+
+Route::delete('/profile/reviewrating/', [ReviewratingController::class, 'destroy'])->middleware('auth')->name('profile');
 
 Route::get('/disimpan', function () {
     return view('disimpan', [
