@@ -56,7 +56,10 @@ class BookController extends Controller
     }
 
     public function showBooks(){
-        $books = Book::latest();
+        $books = Book::select('books.id', 'books.slug', 'books.judul', 'books.penulis', 'books.ISBN', DB::raw('AVG(rrusers.rating) as AVG'), DB::raw('COUNT(rrusers.rating) as COUNT'))
+                    ->join('rrusers','books.id','=','rrusers.book_id')
+                    ->groupBy('books.id')
+                    ->orderBy('books.tanggalterbit', 'desc');
 
         if (request('search')){
             $books->where('judul', 'like', '%' . request('search') . '%')->orWhere('penulis', 'like', '%' . request('search'). '%');
