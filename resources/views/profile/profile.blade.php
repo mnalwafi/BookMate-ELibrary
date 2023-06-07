@@ -12,16 +12,16 @@
         <div class="tab-option">
             <ul>
                 <li class="option-list">
-                    <a href="/profile/" class="pactive">Buku Dipinjam</a>
+                    <a href="/profile/-" class="pactive" style="display: none">Buku Dipinjam</a>
                 </li>
                 <li class="option-list">
-                    <a href="/profile/reviewrating"
-                        class="">Reviews & Ratings</a>
+                    <a href="/profile/" class="">Reviews & Ratings</a>
                 </li>
-                <li class="option-list">
-                    <a href="/profile/buku-diunggah"
-                        class="">Buku Diunggah</a>
-                </li>
+                @if (auth()->user()->level == 'admin')
+                    <li class="option-list">
+                        <a href="/profile/buku-diunggah" class="">Buku Diunggah</a>
+                    </li>
+                @endif
             </ul>
             <hr style="border: 1px solid #eaeaea; margin-top: 10px; margin-bottom: 10px; width: 930px">
         </div>

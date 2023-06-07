@@ -36,7 +36,6 @@ class BookFactory extends Factory
             'panjang' => $faker->numberBetween(15,20),
             'deskripsi' => $faker->paragraph(20),
             'tanggalterbit' => $faker->dateTime(),
-            'kuantitas' => $faker->numberBetween(0,10),
             'cover' => $faker->word(),
             'slug' => $faker->slug(),
         ];

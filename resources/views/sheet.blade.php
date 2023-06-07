@@ -3,9 +3,13 @@
 @section('content')
 
 
-{{auth()->user()->username}}
+{{auth()->user()->level}}
 
-@foreach ($userbook as $user)
+@if (auth()->user()->level == 'admin')
+    oke
+@endif
+
+{{-- @foreach ($userbook as $user)
     <h3>{{$user->book_id}}</h3>
     <p>{{$user->book_judul}}</p>
 @endforeach
@@ -20,7 +24,7 @@ review and rating
     <h2>judul buku {{$review->book_judul}}</h2>
     <h3>rating {{$review->rating}}</h3>
     <p>{{$review->review}}</p>
-@endforeach
+@endforeach --}}
 
 {{-- {{$userdata->judul[0]}} --}}
 

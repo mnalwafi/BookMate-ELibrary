@@ -153,10 +153,9 @@ nav ul {
     /* Auto layout */
 
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto;
     padding: 0px;
     gap: 43px;
-    width: 300px;
     margin-block: 16px;
 
     padding-inline-start: 0;

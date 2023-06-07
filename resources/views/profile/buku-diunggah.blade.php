@@ -11,17 +11,14 @@
 
         <div class="tab-option">
             <ul>
-                <li class="option-list">
-                    <a href="/profile"
-                        class="">Buku Dipinjam</a>
+                <li class="option-list" style="display:none">
+                    <a href="/profile" class="">Buku Dipinjam</a>
                 </li>
                 <li class="option-list">
-                    <a href="/profile/reviewrating"
-                        class="">Reviews & Ratings</a>
+                    <a href="/profile" class="">Reviews & Ratings</a>
                 </li>
                 <li class="option-list">
-                    <a href="/profile/buku-diunggah"
-                        class="pactive">Buku Diunggah</a>
+                    <a href="/profile/buku-diunggah" class="pactive">Buku Diunggah</a>
                 </li>
             </ul>
             <hr style="border: 1px solid #eaeaea; margin-top: 10px; margin-bottom: 10px;">
@@ -66,10 +63,13 @@
 
         <div class="main-content">
             <div id="buku-diunggah">
-                <div class="buku-unggah">
-                    <img src="" class="cover" alt="">
-                    <button class="button btn-batal-up">Batalkan upload</button>
-                </div>
+                @foreach ($userbook as $book)
+                    <div class="buku-unggah">
+                        <img src="https://covers.openlibrary.org/b/isbn/{{ $book->book_isbn }}-L.jpg" class="cover"
+                            alt="">
+                        <button class="button btn-batal-up">Batalkan upload</button>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>

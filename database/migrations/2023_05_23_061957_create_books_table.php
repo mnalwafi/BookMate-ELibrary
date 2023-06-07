@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->string('ISBN');
+            $table->string('ISBN')->unique();
             $table->string('bahasa');
             $table->string('judul')->unique();
             $table->string('penulis');
@@ -24,7 +24,6 @@ return new class extends Migration
             $table->integer('panjang');
             $table->text('deskripsi');
             $table->date('tanggalterbit');
-            $table->integer('kuantitas');
             $table->string('cover');
             $table->string('slug')->unique();
             $table->timestamps();

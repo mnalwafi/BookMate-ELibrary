@@ -11,7 +11,7 @@
     </form>
     <ul>
         <li><a href="{{ route('home') }}" class="{{ Request::is('home', 'book*') ? 'active' : '' }}">Beranda</a></li>
-        <li><a href="{{ route('saved') }}" class="{{ Request::is('disimpan') ? 'active' : '' }}">Disimpan</a></li>
+        <li style="display: none"><a href="{{ route('saved') }}" class="{{ Request::is('disimpan') ? 'active' : '' }}" style="display: none">Disimpan</a></li>
         <li><a href="{{ route('profile') }}" class="{{ Request::is('profile*') ? 'active' : '' }}">Profile</a></li>
     </ul>
 </nav>

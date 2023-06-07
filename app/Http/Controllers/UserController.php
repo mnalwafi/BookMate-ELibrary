@@ -38,14 +38,17 @@ class UserController extends Controller
         ]);
     }
     public function unggah(){
-        return view('profile.buku-diunggah', [
-            "title" => "Profile",
-            "userbook" => User::with('book')->select('users.*', 'books.slug as book_slug', 'books.penulis as book_penulis', 'books.judul as book_judul', 'books.ISBN as book_isbn', 'books.cover as book_cover', 'books.id as book_id')
-                                        ->join('books', 'users.id', '=', 'books.user_id')
-                                        ->groupBy('books.id')
-                                        ->where('users.username', Auth::user()->username)
-                                        ->latest()
-                                        ->get()
-        ]);
+        if(auth::user()->level == 'admin') {
+            return view('profile.buku-diunggah', [
+                "title" => "Profile",
+                "userbook" => User::with('book')->select('users.*', 'books.slug as book_slug', 'books.penulis as book_penulis', 'books.judul as book_judul', 'books.ISBN as book_isbn', 'books.cover as book_cover', 'books.id as book_id')
+                                            ->join('books', 'users.id', '=', 'books.user_id')
+                                            ->groupBy('books.id')
+                                            ->where('users.username', Auth::user()->username)
+                                            ->latest()
+                                            ->get()
+            ]);
+        }
+        abort(404);
     }
 }
