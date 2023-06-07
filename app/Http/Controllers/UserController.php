@@ -33,6 +33,7 @@ class UserController extends Controller
                                     ->join('users', 'users.id', '=', 'rrusers.user_id')
                                     ->groupBy('rrusers.id')
                                     ->where('users.username', Auth::user()->username)
+                                    ->latest()
                                     ->get()
         ]);
     }

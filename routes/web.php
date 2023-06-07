@@ -32,7 +32,7 @@ Route::get('/profile', [UserController::class, 'index'])->middleware('auth')->na
 Route::get('/profile/reviewrating', [UserController::class, 'review'])->middleware('auth')->name('profile');
 Route::get('/profile/buku-diunggah', [UserController::class, 'unggah'])->middleware('auth')->name('profile');
 
-Route::delete('/profile/reviewrating/', [ReviewratingController::class, 'destroy'])->middleware('auth')->name('profile');
+Route::post('/profile/reviewrating', [ReviewratingController::class, 'destroy'])->middleware('auth')->name('profile');
 
 Route::get('/disimpan', function () {
     return view('disimpan', [
@@ -54,4 +54,4 @@ Route::post('/book/{slug}', [ReviewratingController::class, 'store']);
 
 Route::get('/sheet', [SheetController::class, 'index'])->middleware('auth');
 
-Route::get('/buku', [BookController::class, 'showBooks']);
+Route::get('/book', [BookController::class, 'showBooks']);

@@ -81,6 +81,14 @@ nav {
     flex-grow: 0;
 }
 
+.search-bar button {
+    background-color: transparent;
+    color: transparent;
+    border: none;
+    padding: none;
+    appearance: none;
+}
+
 .search-field {
     width: 552px;
     height: 64px;

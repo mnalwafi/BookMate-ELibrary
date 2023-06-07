@@ -2,26 +2,22 @@
 
 @section('link')
     <link rel="stylesheet" href="/css/Profile.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 @endsection
 
 @section('content')
     @include('assets.navbar')
-
     <div class="container">
-
         <div class="tab-option">
             <ul>
                 <li class="option-list">
-                    <a href="/profile"
-                        class="">Buku Dipinjam</a>
+                    <a href="/profile" class="">Buku Dipinjam</a>
                 </li>
                 <li class="option-list">
-                    <a href="/profile/reviewrating"
-                        class="pactive">Reviews & Ratings</a>
+                    <a href="/profile/reviewrating" class="pactive">Reviews & Ratings</a>
                 </li>
                 <li class="option-list">
-                    <a href="/profile/buku-diunggah"
-                        class="">Buku Diunggah</a>
+                    <a href="/profile/buku-diunggah" class="">Buku Diunggah</a>
                 </li>
             </ul>
             <hr style="border: 1px solid #eaeaea; margin-top: 10px; margin-bottom: 10px;">
@@ -71,8 +67,8 @@
                         <div class="atas">
                             <h3>{{ $review->book_judul }} - {{ $review->book_penulis }}</h3>
                             <form action="/profile/reviewrating/" method="POST">
-                                @method('delete')
                                 @csrf
+                                <input type="hidden" name="id" value="{{ $review->id }}">
                                 <button onclick="return confirm('Beneran mau hapus ulasan?')">
                                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -106,4 +102,26 @@
             </div>
         </div>
     </div>
+
+    @if (session()->has('registerSuccess'))
+        <div class="alert alert-success">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M16 26C21.5228 26 26 21.5228 26 16C26 10.4772 21.5228 6 16 6C10.4772 6 6 10.4772 6 16C6 21.5228 10.4772 26 16 26Z"
+                    fill="#12B76A" stroke="#12B76A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M20.5 13L14.5 19L12 16.5" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+            <strong>{{ session('registerSuccess') }}</strong>
+        </div>
+    @endif
+    <script>
+        $(document).ready(function() {
+            window.setTimeout(function() {
+                $(".alert").fadeTo(1000, 0).slideUp(1000, function() {
+                    $(this).remove();
+                });
+            }, 2000);
+        });
+    </script>
 @endsection

@@ -19,8 +19,6 @@ class ReviewratingController extends Controller
     }
 
     public function store(Request $request){
-
-
         $validatedData = $request->validate([
             'book_id' => 'required|numeric',
             'user_id' => 'required|numeric',
@@ -33,9 +31,9 @@ class ReviewratingController extends Controller
         return redirect(session('detail_url'))->with('registerSuccess', 'Selamat, ulasan kamu berhasil diunggah 🎉');
     }
 
-    public function destroy(rruser $rruser){
-        rruser::destroy($rruser->id);
+    public function destroy(Request $request){
+        rruser::where('id', $request->id)->delete();
 
-        return redirect('/profile/reviewrating')->with('registerSuccess', 'Selamat, ulasan kamu berhasil diunggah 🎉');
+        return redirect('/profile/reviewrating')->with('registerSuccess', 'Ulasan kamu berhasil dihapus 🎉');
     }
 }

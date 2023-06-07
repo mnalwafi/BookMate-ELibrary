@@ -53,11 +53,15 @@ class BookController extends Controller
     }
 
     public function showBooks(){
-        $books = Book::all();
+        $books = Book::latest();
+
+        if (request('search')){
+            $books->where('judul', 'like', '%' . request('search') . '%')->orWhere('penulis', 'like', '%' . request('search'). '%');
+        }
 
         return view('semua-buku', [
             'title' => 'Semua Buku',
-            'books' => $books,
+            'books' => $books->get(),
         ]);
     }
 
