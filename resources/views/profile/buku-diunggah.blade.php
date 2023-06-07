@@ -73,4 +73,13 @@
             </div>
         </div>
     </div>
+
+    <a href="{{ route('books.create.step.one') }}" class="addBtn">
+        <svg width="82" height="82" viewBox="0 0 82 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="41" cy="41" r="41" fill="#3DA9FC" />
+            <path
+                d="M54.6669 41.9079H43.7335V52.8412H40.0891V41.9079H29.1558V38.2634H40.0891V27.3301H43.7335V38.2634H54.6669V41.9079Z"
+                fill="white" />
+        </svg>
+    </a>
 @endsection
