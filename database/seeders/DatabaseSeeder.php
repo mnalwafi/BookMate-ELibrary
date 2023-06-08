@@ -31,6 +31,15 @@ class DatabaseSeeder extends Seeder
             "level" => 'admin'
         ]);
 
+        User::create([
+            "name" => 'Farah',
+            "username" => 'farahbns',
+            "email" => 'farah@gmail.com',
+            "phone-number" => '6287339163820',
+            "password" => bcrypt('password'),
+            "level" => 'user'
+        ]);
+
         $this->call([
             BookSeeder::class,
             ReviewratingSeeder::class,
