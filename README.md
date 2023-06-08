@@ -17,7 +17,9 @@ $ php artisan migrate:fresh -seed
 Data User:
 
 User level= admin
+
 Username= mnalwafi
+
 password= password
 
 User level= admin
