@@ -13,3 +13,20 @@ $ php artisan migrate:fresh -seed
 ```
 
 4. Website BookMate sudah dapat digunakan diperangkat anda
+
+Data User:
+
+User level= admin
+Username= mnalwafi
+password= password
+
+User level= admin
+Username= levintr
+password= password
+
+User level= user
+Username= Farahbns
+password= password
+
+User level= guest
+don't bother login
