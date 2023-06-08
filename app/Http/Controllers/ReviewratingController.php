@@ -34,6 +34,6 @@ class ReviewratingController extends Controller
     public function destroy(Request $request){
         rruser::where('id', $request->id)->delete();
 
-        return redirect('/profile/reviewrating')->with('registerSuccess', 'Ulasan kamu berhasil dihapus 🎉');
+        return redirect('/profile')->with('registerSuccess', 'Ulasan kamu berhasil dihapus 🎉');
     }
 }

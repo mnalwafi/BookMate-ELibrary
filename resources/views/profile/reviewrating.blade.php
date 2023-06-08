@@ -68,7 +68,7 @@
                     <div class="review">
                         <div class="atas">
                             <h3>{{ $review->book_judul }} - {{ $review->book_penulis }}</h3>
-                            <form action="/profile/reviewrating/" method="POST">
+                            <form action="/profile" method="POST">
                                 @csrf
                                 <input type="hidden" name="id" value="{{ $review->id }}">
                                 <button onclick="return confirm('Beneran mau hapus ulasan?')">
