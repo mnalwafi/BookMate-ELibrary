@@ -92,10 +92,10 @@ class BookController extends Controller
                 'ISBN' => 'required|numeric|unique:books',
                 'penulis' => 'required',
                 'penerbit' => 'required',
-                'cover' => 'image|file|max:5096'
+                'cover' => 'required|image|file|max:5096'
             ]);
 
-            $validatedData['image'] = $request->file('cover')->store('book-cover');
+            $validatedData['cover'] = $request->file('cover')->store('book-cover');
 
             if(empty($request->session()->get('book'))){
                 $book = new Book();

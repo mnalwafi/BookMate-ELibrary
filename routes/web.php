@@ -63,9 +63,9 @@ Route::get('/profile/buku-diunggah/create/step-one', [BookController::class, 'cr
 Route::post('/profile/buku-diunggah/create/step-one', [BookController::class, 'postCreateStepOne'])->name('books.create.step.one.post');
 
 Route::get('/profile/buku-diunggah/create/step-two', [BookController::class, 'createStepTwo'])->name('books.create.step.two');
-Route::post('/profile/buku-diunggah/create/step-two', [BookController::class, 'postCreateStepOne'])->name('books.create.step.two.post');
+Route::post('/profile/buku-diunggah/create/step-two', [BookController::class, 'postCreateStepTwo'])->name('books.create.step.two.post');
 
 Route::get('/profile/buku-diunggah/create/step-three', [BookController::class, 'createStepThree'])->name('books.create.step.three');
-Route::post('/profile/buku-diunggah/create/step-three', [BookController::class, 'postCreateStepOne'])->name('books.create.step.three.post');
+Route::post('/profile/buku-diunggah/create/step-three', [BookController::class, 'postCreateStepThree'])->name('books.create.step.three.post');
 
 Route::get('/profile/buku-diunggah/create/step-one/checkSlug', [BookController::class, 'checkSlug'])->middleware('auth');

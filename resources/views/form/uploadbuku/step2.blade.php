@@ -1,7 +1,7 @@
 @extends('template.doctype')
 
 @section('link')
-    <link rel="stylesheet" href="/css/Formbuku.css">
+    <link rel="stylesheet" href="/css/formbuku/step2.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -11,7 +11,7 @@
 @endsection
 
 @section('content')
-    <form action="{{ route('books.create.step.one.post') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('books.create.step.two.post') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="content">
             <div class="mainform">
@@ -19,9 +19,9 @@
                     <h1>Unggah buku</h1>
                 </div>
                 <div class="judul">
-                    <label for="judul">Judul buku</label>
-                    <input type="text" name="Deskripsi" id="Deskripsi" placeholder="Deskripsi buku">
-                    @error('judul')
+                    <label for="judul">Deskripsi buku</label>
+                    <textarea rows="6" name="deskripsi" id="deskripsi" maxlength="255" placeholder="Deskripsi buku">{{$book->deskripsi}}</textarea>
+                    @error('deskripsi')
                         <div class="invalid-message">
                             {{ $message }}
                         </div>
@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="navigasi">
-            <a href="/profile/buku-diunggah" class="back">
+            <a href="{{route('books.create.step.one')}}" class="back">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <mask id="mask0_721_1102" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0"
                         y="0" width="24" height="24">

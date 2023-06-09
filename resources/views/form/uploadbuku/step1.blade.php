@@ -21,7 +21,7 @@
                 <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                 <div class="judul">
                     <label for="judul">Judul buku</label>
-                    <input type="text" name="judul" id="judul" placeholder="Judul buku">
+                    <input type="text" name="judul" id="judul" placeholder="Judul buku" value="{{$book->judul}}">
                     @error('judul')
                         <div class="invalid-message">
                             {{ $message }}
@@ -30,7 +30,7 @@
                 </div>
                 <div class="judul">
                     <label for="slug">Slug</label>
-                    <input type="text" name="slug" id="slug" placeholder="Slug">
+                    <input type="text" name="slug" id="slug" placeholder="Slug" value="{{$book->slug}}">
                     @error('slug')
                         <div class="invalid-message">
                             {{ $message }}
@@ -39,7 +39,7 @@
                 </div>
                 <div class="judul">
                     <label for="ISBN">ISBN</label>
-                    <input type="text" name="ISBN" id="ISBN" placeholder="ISBN">
+                    <input type="text" name="ISBN" id="ISBN" placeholder="ISBN" value="{{$book->ISBN}}">
                     @error('ISBN')
                         <div class="invalid-message">
                             {{ $message }}
@@ -48,7 +48,7 @@
                 </div>
                 <div class="judul">
                     <label for="penulis">Penulis</label>
-                    <input type="text" name="penulis" id="penulis" placeholder="Penulis buku">
+                    <input type="text" name="penulis" id="penulis" placeholder="Penulis buku" value="{{$book->penulis}}">
                     @error('penulis')
                         <div class="invalid-message">
                             {{ $message }}
@@ -57,7 +57,7 @@
                 </div>
                 <div class="judul">
                     <label for="penerbit">Penerbit</label>
-                    <input type="text" name="penerbit" id="penerbit" placeholder="Penerbit buku">
+                    <input type="text" name="penerbit" id="penerbit" placeholder="Penerbit buku" value="{{$book->penerbit}}">
                     @error('penerbit')
                         <div class="invalid-message">
                             {{ $message }}
@@ -108,7 +108,6 @@
                 </svg>
             </button>
         </div>
-
     </form>
 
     <script>
