@@ -21,7 +21,7 @@
                 <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                 <div class="judul">
                     <label for="judul">Judul buku</label>
-                    <input type="text" name="judul" id="judul" placeholder="Judul buku" value="{{$book->judul}}">
+                    <input type="text" name="judul" id="judul" placeholder="Judul buku" value="{{$book->judul ?? old('judul')}}">
                     @error('judul')
                         <div class="invalid-message">
                             {{ $message }}
@@ -30,7 +30,7 @@
                 </div>
                 <div class="judul">
                     <label for="slug">Slug</label>
-                    <input type="text" name="slug" id="slug" placeholder="Slug" value="{{$book->slug}}">
+                    <input type="text" name="slug" id="slug" placeholder="Slug" value="{{$book->slug ?? old('slug')}}">
                     @error('slug')
                         <div class="invalid-message">
                             {{ $message }}
@@ -38,9 +38,9 @@
                     @enderror
                 </div>
                 <div class="judul">
-                    <label for="ISBN">ISBN</label>
-                    <input type="text" name="ISBN" id="ISBN" placeholder="ISBN" value="{{$book->ISBN}}">
-                    @error('ISBN')
+                    <label for="isbn">ISBN</label>
+                    <input type="text" name="isbn" id="isbn" placeholder="ISBN" value="{{$book->isbn ?? old('isbn')}}">
+                    @error('isbn')
                         <div class="invalid-message">
                             {{ $message }}
                         </div>
@@ -48,7 +48,7 @@
                 </div>
                 <div class="judul">
                     <label for="penulis">Penulis</label>
-                    <input type="text" name="penulis" id="penulis" placeholder="Penulis buku" value="{{$book->penulis}}">
+                    <input type="text" name="penulis" id="penulis" placeholder="Penulis buku" value="{{$book->penulis ?? old('penulis')}}">
                     @error('penulis')
                         <div class="invalid-message">
                             {{ $message }}
@@ -57,7 +57,7 @@
                 </div>
                 <div class="judul">
                     <label for="penerbit">Penerbit</label>
-                    <input type="text" name="penerbit" id="penerbit" placeholder="Penerbit buku" value="{{$book->penerbit}}">
+                    <input type="text" name="penerbit" id="penerbit" placeholder="Penerbit buku" value="{{$book->penerbit ?? old('penerbit')}}">
                     @error('penerbit')
                         <div class="invalid-message">
                             {{ $message }}

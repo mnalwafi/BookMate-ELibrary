@@ -21,21 +21,23 @@ class BookFactory extends Factory
     {
         $faker = Faker::create();
 
+        $isbn = ['','','','','','','','','','','','','','','','','','','',''];
+
         $user_id = DB::table('users')->pluck('id')->toArray();
         $reviewrating_id = DB::table('reviewratings')->pluck('id')->toArray();
         $rruser_id = DB::table('rrusers')->pluck('id')->toArray();
         return [
             'user_id' => $faker->numberBetween(1,10),
-            'ISBN' => $faker->unique()->randomElement(['9781423146735','9780786838653','9780747532743','9780553593716','9780064471046','6020351173','602033211X','6020331601','6020301125','1480769134','1368081150','1338596705','133821666X','1250233895','1250091667','054579143X','0545791340','0063080087','006289594X','6020324788']),
+            'isbn' => $faker->$isbn,
             'bahasa' => $faker->randomElement(['Indonesia', 'Inggris']),
             'judul' => $faker->sentence(),
             'penulis' => $faker->name(),
             'penerbit' => $faker->company(),
-            'jmlHalaman' => $faker->numberBetween(200,500),
+            'jumlahHalaman' => $faker->numberBetween(200,500),
             'lebar' => $faker->numberBetween(15,20),
             'panjang' => $faker->numberBetween(15,20),
             'deskripsi' => $faker->paragraph(20),
-            'tanggalterbit' => $faker->dateTime(),
+            'tanggalTerbit' => $faker->dateTime(),
             'cover' => $faker->word(),
             'slug' => $faker->slug(),
         ];

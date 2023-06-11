@@ -29,7 +29,12 @@
                      @if (count($bookrecommend) < 7)
                          @foreach ($bookrecommend as $book)
                              <a href="/book/{{ $book->slug }}" class="cover">
-                                 <img src="https://covers.openlibrary.org/b/isbn/{{ $book->ISBN }}-L.jpg" alt="">
+                                 @if ($book->cover)
+                                     <img src="{{ asset('storage/' . $book->cover) }}" alt="">
+                                 @else
+                                     <img src="https://covers.openlibrary.org/b/isbn/{{ $book->isbn }}-L.jpg"
+                                         alt="">
+                                 @endif
                                  <h3>{{ $book->penulis }}</h3>
                                  <h1>{{ $book->judul }}</h1>
                                  <div class="rating">
@@ -95,8 +100,12 @@
                      @else
                          @for ($i = 0; $i < 7; $i++)
                              <a href="/book/{{ $bookrecommend[$i]->slug }}" class="cover">
-                                 <img src="https://covers.openlibrary.org/b/isbn/{{ $bookrecommend[$i]->ISBN }}-L.jpg"
-                                     alt="">
+                                 @if ($bookrecommend[$i]->cover)
+                                     <img src="{{ asset('storage/' . $bookrecommend[$i]->cover) }}" alt="">
+                                 @else
+                                     <img src="https://covers.openlibrary.org/b/isbn/{{ $bookrecommend[$i]->isbn }}-L.jpg"
+                                         alt="">
+                                 @endif
                                  <h3>{{ $bookrecommend[$i]->penulis }}</h3>
                                  <h1>{{ $bookrecommend[$i]->judul }}</h1>
                                  <div class="rating">
@@ -177,8 +186,12 @@
                      @if (count($bookpopular) < 7)
                          @foreach ($bookpopular as $book)
                              <a href="/book/{{ $book->slug }}" class="cover">
-                                 <img src="https://covers.openlibrary.org/b/isbn/{{ $book->ISBN }}-L.jpg"
-                                     alt="">
+                                 @if ($book->cover)
+                                     <img src="{{ asset('storage/' . $book->cover) }}" alt="">
+                                 @else
+                                     <img src="https://covers.openlibrary.org/b/isbn/{{ $book->isbn }}-L.jpg"
+                                         alt="">
+                                 @endif
                                  <h3>{{ $book->penulis }}</h3>
                                  <h1>{{ $book->judul }}</h1>
                                  <div class="rating">
@@ -244,8 +257,12 @@
                      @else
                          @for ($i = 0; $i < 7; $i++)
                              <a href="/book/{{ $bookpopular[$i]->slug }}" class="cover">
-                                 <img src="https://covers.openlibrary.org/b/isbn/{{ $bookpopular[$i]->ISBN }}-L.jpg"
-                                     alt="">
+                                 @if ($bookpopular[$i]->cover)
+                                     <img src="{{ asset('storage/' . $bookpopular[$i]->cover) }}" alt="">
+                                 @else
+                                     <img src="https://covers.openlibrary.org/b/isbn/{{ $bookpopular[$i]->isbn }}-L.jpg"
+                                         alt="">
+                                 @endif
                                  <h3>{{ $bookpopular[$i]->penulis }}</h3>
                                  <h1>{{ $bookpopular[$i]->judul }}</h1>
                                  <div class="rating">
@@ -326,8 +343,12 @@
                      @if (count($booklatest) < 7)
                          @foreach ($booklatest as $book)
                              <a href="/book/{{ $book->slug }}" class="cover">
-                                 <img src="https://covers.openlibrary.org/b/isbn/{{ $book->ISBN }}-L.jpg"
-                                     alt="">
+                                 @if ($book->cover)
+                                     <img src="{{ asset('storage/' . $book->cover) }}" alt="">
+                                 @else
+                                     <img src="https://covers.openlibrary.org/b/isbn/{{ $book->isbn }}-L.jpg"
+                                         alt="">
+                                 @endif
                                  <h3>{{ $book->penulis }}</h3>
                                  <h1>{{ $book->judul }}</h1>
                                  <div class="rating">
@@ -393,8 +414,12 @@
                      @else
                          @for ($i = 0; $i < 7; $i++)
                              <a href="/book/{{ $booklatest[$i]->slug }}" class="cover">
-                                 <img src="https://covers.openlibrary.org/b/isbn/{{ $booklatest[$i]->ISBN }}-L.jpg"
-                                     alt="">
+                                 @if ($booklatest[$i]->cover)
+                                     <img src="{{ asset('storage/' . $booklatest[$i]->cover) }}" alt="">
+                                 @else
+                                     <img src="https://covers.openlibrary.org/b/isbn/{{ $booklatest[$i]->isbn }}-L.jpg"
+                                         alt="">
+                                 @endif
                                  <h3>{{ $booklatest[$i]->penulis }}</h3>
                                  <h1>{{ $booklatest[$i]->judul }}</h1>
                                  <div class="rating">

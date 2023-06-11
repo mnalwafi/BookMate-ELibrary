@@ -19,7 +19,9 @@ class Book extends Model
         ];
     }
 
-    protected $fillable = ['user_id', 'ISBN', 'judul', 'penulis', 'penerbit', 'bahasa', 'jmlHalaman', 'lebar', 'panjang', 'deskripsi', 'tanggalterbit', 'cover', 'slug'];
+    protected $fillable = ['user_id', 'isbn', 'judul', 'penulis', 'penerbit', 'bahasa', 'jumlahHalaman', 'lebar', 'panjang', 'deskripsi', 'tanggalTerbit', 'cover', 'slug'];
+
+    protected $guarded = 'id';
 
     public function user(){
         return $this->belongsTo(User::class);

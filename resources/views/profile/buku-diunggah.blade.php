@@ -64,11 +64,17 @@
         <div class="main-content">
             <div id="buku-diunggah">
                 @foreach ($userbook as $book)
+                <a href="/book/{{ $book->book_slug }}">
                     <div class="buku-unggah">
-                        <img src="https://covers.openlibrary.org/b/isbn/{{ $book->book_isbn }}-L.jpg" class="cover"
-                            alt="">
+                        @if ($book->book_cover)
+                            <img src="{{ asset('storage/' . $book->book_cover) }}" alt="">
+                        @else
+                            <img src="https://covers.openlibrary.org/b/isbn/{{ $book->book_isbn }}-L.jpg" alt="">
+                        @endif
                         <button class="button btn-batal-up">Batalkan upload</button>
                     </div>
+
+                </a>
                 @endforeach
             </div>
         </div>

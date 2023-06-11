@@ -20,7 +20,7 @@
                 </div>
                 <div class="judul">
                     <label for="judul">Deskripsi buku</label>
-                    <textarea rows="6" name="deskripsi" id="deskripsi" maxlength="255" placeholder="Deskripsi buku">{{$book->deskripsi}}</textarea>
+                    <textarea rows="6" name="deskripsi" id="deskripsi" maxlength="255" placeholder="Deskripsi buku">{{$book->deskripsi ?? old('deskripsi')}}</textarea>
                     @error('deskripsi')
                         <div class="invalid-message">
                             {{ $message }}
@@ -43,8 +43,8 @@
                 <h3>Kembali</h3>
             </a>
             <div class="step">
+                <hr class="finish">
                 <hr class="active">
-                <hr>
                 <hr>
             </div>
             <button>

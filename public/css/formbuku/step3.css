@@ -1,0 +1,265 @@
+* {
+    appearance: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    margin-inline: 0;
+    margin-block: 0;
+}
+
+button {
+    cursor: pointer;
+    background-color: transparent;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 160px;
+
+    position: absolute;
+    width: 1047px;
+    height: 760px;
+    left: calc(50% - 1047px/2 + 0.5px);
+    top: calc(50% - 760px/2);
+}
+
+.navigasi {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    gap: 48px;
+
+    width: 1047px;
+    height: 24px;
+}
+
+.navigasi a, .navigasi button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+
+    height: 24px;
+}
+
+.navigasi a h3, .navigasi button h3 {
+    height: 24px;
+
+    /* Body/Body Large */
+
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.5px;
+
+    /* Button */
+
+    color: #3DA9FC;
+}
+
+.step {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 24px;
+
+    height: 24px;
+}
+
+.step hr {
+    width: 80px;
+    height: 0px;
+
+    border: 2px solid #eaeaea;
+}
+
+.step .active {
+    border: 2px solid #094067;
+}
+
+.step .finish {
+    border: 2px solid #3DA9FC;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 273px;
+
+    width: 1047px;
+    height: 688px;
+}
+.content .mainform {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+
+    width: 480px;
+    height: 576px;
+}
+
+.content .mainform .unggahbuku h1 {
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 36px;
+    /* identical to box height, or 129% */
+
+
+    /* Headline */
+
+    color: #094067;
+}
+
+.content .mainform .judul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+
+    width: 1047px;
+    height: 628px;
+}
+
+.content .mainform .judul label {
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    letter-spacing: 0.15px;
+
+    /* Paragraph */
+
+    color: #5F6C7B;
+}
+
+.content .mainform .judul label {
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    letter-spacing: 0.15px;
+
+    /* Paragraph */
+
+    color: #5F6C7B;
+}
+
+.content .mainform .judul input, .content .mainform .judul select {
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px 24px;
+    gap: 16px;
+
+    width: 480px;
+    height: 52px;
+
+    /* Background and Button Text */
+
+    background: #FFFFFF;
+    /* Paragraph */
+
+    border: 1px solid #5F6C7B;
+    border-radius: 8px;
+}
+
+.content .mainform .judul input::placeholder {
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+    letter-spacing: 0.1px;
+
+    /* Neutral/Neutral-300 */
+
+    color: #C1C1C1;
+}
+
+input[type='text'], input[type='date'], select {
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+    letter-spacing: 0.1px;
+}
+
+.content .mainform .cm {
+    position: relative;
+}
+
+.content .mainform .cm h4 {
+    position: absolute;
+    left: 436px;
+    top: 48px;
+
+    /* Label/Label Large */
+
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+    letter-spacing: 0.1px;
+
+    color: #000000;
+}
+
+.invalid-message {
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    /* identical to box height, or 133% */
+
+    letter-spacing: 0.4px;
+
+    color: #EB0029;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}

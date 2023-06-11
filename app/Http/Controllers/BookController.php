@@ -18,22 +18,22 @@ class BookController extends Controller
     {
         return view('beranda', [
             "title" => "Beranda",
-            "bookrecommend" => Book::with(['rruser'])->select('books.id', 'books.slug', 'books.judul', 'books.penulis', 'books.ISBN', DB::raw('AVG(rrusers.rating) as AVG'), DB::raw('COUNT(rrusers.rating) as COUNT'))
+            "bookrecommend" => Book::with(['rruser'])->select('books.id', 'books.cover', 'books.slug', 'books.judul', 'books.penulis', 'books.isbn', DB::raw('AVG(rrusers.rating) as AVG'), DB::raw('COUNT(rrusers.rating) as COUNT'))
                                                 ->join('rrusers','books.id','=','rrusers.book_id')
                                                 ->having('AVG', '>', 3)
                                                 ->groupBy('books.id')
                                                 ->orderBy('AVG','desc')
                                                 ->get(),
-            "bookpopular" => Book::with(['rruser'])->select('books.id', 'books.slug', 'books.judul', 'books.penulis', 'books.ISBN', DB::raw('COUNT(rrusers.rating) as COUNT'), DB::raw('AVG(rrusers.rating) as AVG'))
+            "bookpopular" => Book::with(['rruser'])->select('books.id', 'books.cover', 'books.slug', 'books.judul', 'books.penulis', 'books.isbn', DB::raw('COUNT(rrusers.rating) as COUNT'), DB::raw('AVG(rrusers.rating) as AVG'))
                                                 ->join('rrusers','books.id','=','rrusers.book_id')
                                                 ->having('AVG', '>', 3)
                                                 ->groupBy('books.id')
                                                 ->orderBy('COUNT','desc')
                                                 ->get(),
-            "booklatest" => Book::with(['rruser'])->select('books.id', 'books.slug', 'books.judul', 'books.penulis', 'books.ISBN', 'books.tanggalterbit', DB::raw('COUNT(rrusers.rating) as COUNT'), DB::raw('AVG(rrusers.rating) as AVG'))
+            "booklatest" => Book::with(['rruser'])->select('books.id', 'books.cover', 'books.slug', 'books.judul', 'books.penulis', 'books.isbn', 'books.tanggalTerbit', DB::raw('COUNT(rrusers.rating) as COUNT'), DB::raw('AVG(rrusers.rating) as AVG'))
                                                 ->join('rrusers','books.id','=','rrusers.book_id')
                                                 ->groupBy('books.id')
-                                                ->orderBy('books.tanggalterbit', 'desc')
+                                                ->orderBy('books.tanggalTerbit', 'desc')
                                                 ->get(),
         ]);
     }
@@ -56,7 +56,7 @@ class BookController extends Controller
     }
 
     public function showBooks(){
-        $books = Book::select('books.id', 'books.slug', 'books.judul', 'books.penulis', 'books.ISBN', DB::raw('AVG(rrusers.rating) as AVG'), DB::raw('COUNT(rrusers.rating) as COUNT'))
+        $books = Book::select('books.id', 'books.cover', 'books.slug', 'books.judul', 'books.penulis', 'books.ISBN', DB::raw('AVG(rrusers.rating) as AVG'), DB::raw('COUNT(rrusers.rating) as COUNT'))
                     ->join('rrusers','books.id','=','rrusers.book_id')
                     ->groupBy('books.id')
                     ->orderBy('books.tanggalterbit', 'desc');
@@ -89,13 +89,15 @@ class BookController extends Controller
                 'user_id' => 'required|numeric',
                 'judul' => 'required|unique:books',
                 'slug' => 'required|unique:books',
-                'ISBN' => 'required|numeric|unique:books',
                 'penulis' => 'required',
                 'penerbit' => 'required',
-                'cover' => 'required|image|file|max:5096'
+                'cover' => 'required|image|file|max:5096',
+                'isbn' => 'required|numeric|unique:books'
             ]);
 
             $validatedData['cover'] = $request->file('cover')->store('book-cover');
+
+            // dd($validatedData);
 
             if(empty($request->session()->get('book'))){
                 $book = new Book();
@@ -106,6 +108,8 @@ class BookController extends Controller
                 $book->fill($validatedData);
                 $request->session()->put('book', $book);
             }
+
+            // dd($book);
 
             return redirect()->route('books.create.step.two');
     }
@@ -133,6 +137,8 @@ class BookController extends Controller
             $book->fill($validatedData);
             $request->session()->put('book', $book);
 
+            // dd($book);
+
             return redirect()->route('books.create.step.three');
         }
         abort(404);
@@ -153,12 +159,27 @@ class BookController extends Controller
 
     public function postCreateStepThree(Request $request)
     {
-        $book = $request->session()->get('book');
-        $book->save();
+        if(auth::user()->level == 'admin') {
+            $validatedData = $request->validate([
+                'jumlahHalaman' => 'required|max:612',
+                'tanggalTerbit' => 'required',
+                'bahasa' => 'required',
+                'panjang' => 'required|numeric',
+                'lebar' => 'required|numeric'
+            ]);
 
-        $request->session()->forget('book');
+            // dd($validatedData);
 
-        return redirect('/Profile/buku-diunggah')->with('registerSuccess', 'Buku berhasil diunggah');
+            $book = $request->session()->get('book');
+            $book->fill($validatedData);
+            // dd($book);
+            $book->save();
+
+            $request->session()->forget('book');
+
+            return redirect('/profile/buku-diunggah')->with('registerSuccess', 'Buku berhasil diunggah');
+        }
+        abort(404);
     }
 
     public function checkSlug(Request $request){

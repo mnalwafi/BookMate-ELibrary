@@ -14,16 +14,16 @@ return new class extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->string('ISBN')->unique();
+            $table->string('isbn')->unique();
             $table->string('bahasa');
             $table->string('judul')->unique();
             $table->string('penulis');
             $table->string('penerbit');
-            $table->integer('jmlHalaman');
+            $table->integer('jumlahHalaman');
             $table->integer('lebar');
             $table->integer('panjang');
             $table->text('deskripsi');
-            $table->date('tanggalterbit');
+            $table->date('tanggalTerbit');
             $table->string('cover');
             $table->string('slug')->unique();
             $table->timestamps();

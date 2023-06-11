@@ -89,10 +89,11 @@ form {
 }
 
 .step .active {
-    width: 80px;
-    height: 0px;
-
     border: 2px solid #094067;
+}
+
+.step .finish {
+    border: 2px solid #3DA9FC;
 }
 
 .content {
