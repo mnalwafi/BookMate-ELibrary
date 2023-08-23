@@ -9,7 +9,7 @@ $ php artisan serve
 
 3. Jalankan dan isi database menggunakan perintah
 ```terminal
-$ php artisan migrate:fresh --seed
+$ php artisan migrate:fresh -seed
 ```
 
 4. Website BookMate sudah dapat digunakan diperangkat anda
